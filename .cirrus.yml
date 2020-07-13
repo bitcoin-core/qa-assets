@@ -1,0 +1,50 @@
+task:
+  name: "x86_64 Linux  [focal]  [system libs, no depends, fuzz, valgrind]"
+  container:
+    image: ubuntu:20.04
+    cpu: 2
+    memory: 4G
+  timeout_in: 70m
+  env:
+    FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
+    MAKEJOBS: "-j4"
+    DANGER_RUN_CI_ON_HOST: "1"
+    CCACHE_SIZE: "200M"
+    CCACHE_DIR: "/tmp/ccache_dir"
+  ccache_cache:
+    folder: "/tmp/ccache_dir"
+  upstream_clone_script:
+    - cd /tmp
+    - apt update && apt install git -y
+    - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
+    - mkdir -p /tmp/bitcoin-core/ci/scratch
+    - mv /tmp/cirrus-ci-build /tmp/bitcoin-core/ci/scratch/qa-assets
+  ci_script:
+    - cd /tmp/bitcoin-core
+    - ./ci/test_run_all.sh
+    - apt update && apt install git -y
+    - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
+task:
+  name: "x86_64 Linux  [focal]  [system libs, no depends, fuzz, sanitizers]"
+  container:
+    image: ubuntu:20.04
+    cpu: 2
+    memory: 4G
+  timeout_in: 70m
+  env:
+    FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
+    MAKEJOBS: "-j4"
+    DANGER_RUN_CI_ON_HOST: "1"
+    CCACHE_SIZE: "200M"
+    CCACHE_DIR: "/tmp/ccache_dir"
+  ccache_cache:
+    folder: "/tmp/ccache_dir"
+  upstream_clone_script:
+    - cd /tmp
+    - apt update && apt install git -y
+    - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
+    - mkdir -p /tmp/bitcoin-core/ci/scratch
+    - mv /tmp/cirrus-ci-build /tmp/bitcoin-core/ci/scratch/qa-assets
+  ci_script:
+    - cd /tmp/bitcoin-core
+    - ./ci/test_run_all.sh
