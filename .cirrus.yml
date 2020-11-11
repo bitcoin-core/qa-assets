@@ -22,8 +22,6 @@ task:
   ci_script:
     - cd /tmp/bitcoin-core
     - ./ci/test_run_all.sh
-    - apt update && apt install git -y
-    - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
 task:
   name: "x86_64 Linux  [focal]  [system libs, no depends, fuzz, sanitizers]"
   container:
