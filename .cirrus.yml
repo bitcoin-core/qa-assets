@@ -3,11 +3,11 @@ task:
   container:
     image: ubuntu:20.04
     cpu: 8
-    memory: 12G
+    memory: 16G
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
-    MAKEJOBS: "-j9"
+    MAKEJOBS: "-j16"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
