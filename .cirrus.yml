@@ -7,7 +7,7 @@ task:
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
-    MAKEJOBS: "-j16"
+    MAKEJOBS: "-j32"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
