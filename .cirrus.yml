@@ -2,12 +2,14 @@ task:
   name: "x86_64 Linux  [focal]  [system libs, no depends, fuzz, valgrind]"
   container:
     image: ubuntu:20.04
-    cpu: 16
-    memory: 24G
-  timeout_in: 120m
+    cpu: 2
+    memory: 8G
+  timeout_in: 240m
+  # Need to use credits because the timeout was bumped
+  use_compute_credits: $CIRRUS_REPO_FULL_NAME == 'bitcoin-core/qa-assets'
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
-    MAKEJOBS: "-j128"
+    MAKEJOBS: "-j4"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
@@ -26,12 +28,12 @@ task:
   name: "x86_64 Linux  [focal]  [system libs, no depends, fuzz, sanitizers]"
   container:
     image: ubuntu:20.04
-    cpu: 4
+    cpu: 2  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/8e1913ae025/.cirrus.yml#L139
     memory: 8G
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
-    MAKEJOBS: "-j9"
+    MAKEJOBS: "-j4"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
