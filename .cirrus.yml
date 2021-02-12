@@ -4,7 +4,7 @@ task:
     image: ubuntu:20.04
     cpu: 2
     memory: 8G
-  timeout_in: 240m
+  timeout_in: 300m
   # Need to use credits because the timeout was bumped
   use_compute_credits: $CIRRUS_REPO_FULL_NAME == 'bitcoin-core/qa-assets'
   env:
