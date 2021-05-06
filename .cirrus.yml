@@ -47,6 +47,7 @@ task:
     - mv /tmp/cirrus-ci-build /tmp/bitcoin-core/ci/scratch/qa-assets
   ci_script:
     - cd /tmp/bitcoin-core
+    - sed -i 's|FuzzedDataProvider fuzzed_data_provider|return;FuzzedDataProvider fuzzed_data_provider|g'  ./src/test/fuzz/strprintf.cpp  # Avoid tinyformat issue
     - ./ci/test_run_all.sh
 task:
   name: "[system libs, no depends, fuzz, sanitizers]  [focal]"
