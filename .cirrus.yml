@@ -28,12 +28,12 @@ task:
   name: "[depends, fuzz, msan]  [focal]"
   container:
     image: ubuntu:20.04
-    cpu: 2
-    memory: 8G
+    cpu: 4
+    memory: 16G
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_msan.sh"
-    MAKEJOBS: "-j4"
+    MAKEJOBS: "-j8"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
@@ -53,12 +53,12 @@ task:
   name: "[system libs, no depends, fuzz, sanitizers]  [focal]"
   container:
     image: ubuntu:20.04
-    cpu: 2  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/8e1913ae025/.cirrus.yml#L139
-    memory: 8G
+    cpu: 4  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
+    memory: 16G
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
-    MAKEJOBS: "-j4"
+    MAKEJOBS: "-j8"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
