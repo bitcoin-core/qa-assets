@@ -2,14 +2,12 @@ task:
   name: "[system libs, no depends, fuzz, valgrind]  [focal]"
   container:
     image: ubuntu:20.04
-    cpu: 2
-    memory: 8G
-  timeout_in: 300m
-  # Need to use credits because the timeout was bumped
-  use_compute_credits: $CIRRUS_REPO_FULL_NAME == 'bitcoin-core/qa-assets'
+    cpu: 8
+    memory: 32G
+  timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
-    MAKEJOBS: "-j4"
+    MAKEJOBS: "-j16"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
