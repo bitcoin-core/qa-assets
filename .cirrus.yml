@@ -3,7 +3,7 @@ task:
   container:
     image: ubuntu:20.04
     cpu: 8
-    memory: 32G
+    memory: 12G
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
@@ -27,7 +27,7 @@ task:
   container:
     image: ubuntu:20.04
     cpu: 4
-    memory: 16G
+    memory: 12G
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_msan.sh"
@@ -52,7 +52,7 @@ task:
   container:
     image: ubuntu:20.04
     cpu: 4  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
-    memory: 16G
+    memory: 12G
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
