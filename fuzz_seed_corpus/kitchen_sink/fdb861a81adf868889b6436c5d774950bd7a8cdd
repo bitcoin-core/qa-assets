@@ -1,0 +1,1544 @@
+zone_aware_load_balancer_test_case {
+  load_balancer_test_case {
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      choose_host {
+      }
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      update_health_flags {
+        host_priority: 9
+      }
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      preconnect {
+      }
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      preconnect {
+      }
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      update_health_flags {
+      }
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      choose_host {
+      }
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      update_health_flags {
+      }
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions ᠎{
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      choose_host {
+      }
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      choose_host {
+      }
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+    }
+    actions {
+      preconnect {
+      }
+    }
+    actions {
+      choose_host {
+      }
+    }
+    actions {
+    }
+    actions {
+      update_health_flags {
+        host_priority: 655360
+      }
+    }
+    actions {
+      update_health_flags {
+        host_priority: 4
+      }
+    }
+    actions {
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 327936
+      num_hosts_locality_c: 122
+      random_bytestring: 2147549184
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1566
+      num_hosts_locality_a: 256
+      num_hosts_locality_c: 122
+      random_bytestring: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 259
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 3149824
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 6
+      random_bytestring: 7233792
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      num_hosts_locality_c: 4218
+      random_bytestring: 122
+      random_bytestring: 256
+      random_bytestring: 7299328
+      random_bytestring: 2147549184
+      random_bytestring: 4
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_b: 6
+      num_hosts_locality_c: 23418
+      random_bytestring: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      num_hosts_locality_a: 128
+      random_bytestring: 1146
+      random_bytestring: 0
+      random_bytestring: 538968064
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 7995390
+      num_hosts_locality_c: 524288
+    }
+    setup_priority_levels {
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1385
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 259
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      num_hosts_locality_b: 1536
+      random_bytestring: 6255717
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      num_hosts_locality_b: 55296
+      num_hosts_locality_c: 38
+      random_bytestring: 1146
+      random_bytestring: 6255717
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 128
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 122
+      random_bytestring: 2147549184
+      random_bytestring: 16
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 55296
+      num_hosts_locality_a: 6
+      random_bytestring: 256
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 6
+      num_hosts_locality_b: 292
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 43
+      num_hosts_locality_c: 256
+      random_bytestring: 0
+      random_bytestring: 122
+      random_bytestring: 7995392
+      random_bytestring: 122
+      random_bytestring: 73646
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 257
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 256
+      random_bytestring: 29184
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 6
+      num_hosts_locality_c: 1
+      random_bytestring: 9850
+      random_bytestring: 7995392
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 18
+      num_hosts_locality_b: 128
+      num_hosts_locality_c: 122
+      random_bytestring: 1146
+      random_bytestring: 6255717
+      random_bytestring: 6
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 2097152
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 259
+    }
+    setup_priority_levels {
+      random_bytestring: 65536
+      random_bytestring: 8192
+      random_bytestring: 47
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 128
+      num_hosts_locality_b: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1694500382
+      num_hosts_locality_a: 537264128
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      random_bytestring: 0
+      random_bytestring: 122
+      random_bytestring: 7995392
+      random_bytestring: 7299328
+      random_bytestring: 2147549184
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_c: 128
+      random_bytestring: 0
+      random_bytestring: 65440
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 4227858432
+      num_hosts_locality_c: 144
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 4
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1
+      num_hosts_locality_b: 101
+      random_bytestring: 256
+      random_bytestring: 128
+      random_bytestring: 0
+      random_bytestring: 8192
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 15533612
+      random_bytestring: 7233792
+      random_bytestring: 4227858432
+      random_bytestring: 16
+      random_bytestring: 18
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 101
+      random_bytestring: 0
+      random_bytestring: 33060
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_a: 4294926588
+      num_hosts_locality_b: 6
+      num_hosts_locality_c: 25978
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 1
+      random_bytestring: 1146
+      random_bytestring: 259
+      random_bytestring: 0
+      random_bytestring: 2147549184
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 2154561536
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 259
+      num_hosts_locality_a: 4
+      random_bytestring: 47
+    }
+    setup_priority_levels {
+      random_bytestring: 122
+      random_bytestring: 6
+      random_bytestring: 6
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 4294967287
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 122
+      random_bytestring: 2147549184
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1566
+      num_hosts_locality_a: 4194415
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 122
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1566
+      num_hosts_locality_a: 9
+      num_hosts_locality_c: 249
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 259
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1566
+      num_hosts_locality_b: 292
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 128
+      num_hosts_locality_c: 256
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      num_hosts_locality_c: 4
+      random_bytestring: 256
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 122
+      random_bytestring: 0
+      random_bytestring: 0
+      random_bytestring: 7995392
+      random_bytestring: 7299328
+      random_bytestring: 28265
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 31333
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+      random_bytestring: 6255717
+      random_bytestring: 1566
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 65658
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 32
+      num_hosts_locality_a: 64
+      num_hosts_locality_b: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 1566
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 256
+      random_bytestring: 7995392
+      random_bytestring: 0
+      random_bytestring: 256
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 256
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      random_bytestring: 0
+      random_bytestring: 122
+      random_bytestring: 7995392
+      random_bytestring: 7299328
+      random_bytestring: 2147549184
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 37
+      num_hosts_locality_b: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      random_bytestring: 131072
+      random_bytestring: 122
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1566
+      num_hosts_locality_b: 6
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 122
+      random_bytestring: 122
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 4227858432
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 2622208
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 11
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 786176
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 6
+    }
+    setup_priority_levels {
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_b: 851718
+      num_hosts_locality_c: 1566
+      random_bytestring: 18
+      random_bytestring: 6255717
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+      random_bytestring: 1146
+      random_bytestring: 0
+      random_bytestring: 2147549184
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 128
+      random_bytestring: 2147549184
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 122
+      random_bytestring: 256
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 259
+      num_hosts_locality_a: 64
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 16318464
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_b: 6
+      random_bytestring: 1146
+      random_bytestring: 1566
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 256
+      num_hosts_locality_a: 4
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 4
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 31264
+      num_hosts_locality_b: 292
+      random_bytestring: 4227858432
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 524288
+      random_bytestring: 122
+      random_bytestring: 7995392
+      random_bytestring: 2147549184
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1146
+      num_hosts_locality_a: 292
+      random_bytestring: 2214633472
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 327428
+      num_hosts_locality_c: 3
+      random_bytestring: 0
+      random_bytestring: 0
+      random_bytestring: 7995392
+      random_bytestring: 2147549184
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 262144
+      num_hosts_locality_c: 130
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 90
+      num_hosts_locality_b: 122
+      num_hosts_locality_c: 111
+      random_bytestring: 292
+      random_bytestring: 0
+      random_bytestring: 2147549184
+      random_bytestring: 6255717
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 47
+      num_hosts_locality_b: 256
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 4
+    }
+    setup_priority_levels {
+      random_bytestring: 256
+      random_bytestring: 634
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 1953259892
+      num_hosts_locality_b: 292
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 4
+      num_hosts_locality_b: 31498
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 1
+      random_bytestring: 0
+      random_bytestring: 122
+      random_bytestring: 8003584
+      random_bytestring: 7299328
+      random_bytestring: 2147549184
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      random_bytestring: 0
+      random_bytestring: 2147549184
+      random_bytestring: 6255717
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 128
+      random_bytestring: 256
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 122
+      random_bytestring: 2147549184
+      random_bytestring: 6
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1566
+      num_hosts_locality_a: 6
+      num_hosts_locality_b: 6
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_b: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 257
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 4096
+      random_bytestring: 4
+      random_bytestring: 0
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      random_bytestring: 6255717
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 256
+      random_bytestring: 0
+      random_bytestring: 7995514
+      random_bytestring: 7995392
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_b: 6226944
+      num_hosts_locality_c: 122
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 2
+      num_hosts_locality_b: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 128
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 1
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1385
+      num_hosts_locality_a: 122
+      random_bytestring: 122
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      random_bytestring: 122
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_a: 32
+      num_hosts_locality_b: 24326
+      num_hosts_locality_c: 25978
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_a: 6
+      num_hosts_locality_c: 7233792
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1566
+      num_hosts_locality_b: 292
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 6
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 257
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      num_hosts_locality_b: 4230942720
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1
+      num_hosts_locality_b: 6
+      num_hosts_locality_c: 25978
+      random_bytestring: 6
+      random_bytestring: 0
+      random_bytestring: 6255717
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 122
+      random_bytestring: 6255717
+      random_bytestring: 16384
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 2304
+      num_hosts_locality_b: 3149824
+      random_bytestring: 256
+      random_bytestring: 128
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      num_hosts_locality_c: 256
+      random_bytestring: 0
+      random_bytestring: 7086080
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 122
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 256
+      random_bytestring: 7995392
+      random_bytestring: 7299328
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_b: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      num_hosts_locality_a: 122
+      num_hosts_locality_b: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 2293888
+      num_hosts_locality_a: 6
+      random_bytestring: 2147549184
+      random_bytestring: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 111
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1566
+      num_hosts_locality_b: 6
+      random_bytestring: 1
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_b: 1
+      random_bytestring: 122
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 4
+      random_bytestring: 0
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 65536
+      num_hosts_locality_b: 122
+      num_hosts_locality_c: 122
+      random_bytestring: 0
+      random_bytestring: 0
+      random_bytestring: 256
+      random_bytestring: 1146
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_a: 8192
+      random_bytestring: 1146
+      random_bytestring: 0
+      random_bytestring: 2147549184
+      random_bytestring: 524288
+      random_bytestring: 0
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 201326593
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 122
+      random_bytestring: 2147549184
+      random_bytestring: 256
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 83
+      num_hosts_locality_b: 7995392
+      random_bytestring: 2978917
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 6
+      num_hosts_locality_b: 4
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 257
+      random_bytestring: 1744896000
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_b: 3149824
+      random_bytestring: 7233792
+      random_bytestring: 4227858432
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      random_bytestring: 7233792
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 6
+      num_hosts_locality_c: 256
+      random_bytestring: 122
+      random_bytestring: 256
+      random_bytestring: 2147549184
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+      random_bytestring: 1146
+      random_bytestring: 0
+      random_bytestring: 6255717
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      random_bytestring: 256
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 259
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+      num_hosts_locality_c: 101
+      random_bytestring: 101
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 6
+      num_hosts_locality_b: 6
+      random_bytestring: 0
+      random_bytestring: 2147549184
+      random_bytestring: 6
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 2147549184
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 6255717
+      random_bytestring: 256
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      num_hosts_locality_c: 83
+      random_bytestring: 0
+      random_bytestring: 122
+      random_bytestring: 7995392
+      random_bytestring: 8192
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+      random_bytestring: 0
+      random_bytestring: 122
+      random_bytestring: 122
+      random_bytestring: 7299328
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 1
+      random_bytestring: 0
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6255717
+      random_bytestring: 1146
+      random_bytestring: 6255717
+      random_bytestring: 122
+      random_bytestring: 4
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_a: 2560
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      random_bytestring: 671156859
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 256
+      num_hosts_locality_b: 253
+      random_bytestring: 128
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      num_hosts_locality_b: 2560
+      random_bytestring: 0
+      random_bytestring: 122
+      random_bytestring: 1
+      random_bytestring: 8192
+    }
+    setup_priority_levels {
+      random_bytestring: 1948269099
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      num_hosts_locality_a: 4
+      num_hosts_locality_b: 1566
+      random_bytestring: 6
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      num_hosts_locality_b: 6255717
+      num_hosts_locality_c: 8192
+      random_bytestring: 6
+      random_bytestring: 7299328
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+      num_hosts_locality_c: 122
+      random_bytestring: 1146
+      random_bytestring: 0
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      random_bytestring: 124
+      random_bytestring: 0
+      random_bytestring: 6255717
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 15366
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      num_hosts_locality_c: 8192
+      random_bytestring: 2147549184
+      random_bytestring: 256
+      random_bytestring: 0
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      num_hosts_locality_c: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 50331907
+      num_hosts_locality_c: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_b: 292
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 1024
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 257
+      num_hosts_locality_c: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 252
+      num_hosts_locality_b: 1566
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 10617089
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      num_hosts_locality_b: 2162688
+      random_bytestring: 0
+      random_bytestring: 256
+      random_bytestring: 7299328
+      random_bytestring: 2147549184
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_a: 8192
+      num_hosts_locality_b: 536872960
+      num_hosts_locality_c: 292
+      random_bytestring: 1146
+      random_bytestring: 122
+      random_bytestring: 6255717
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 6
+      num_hosts_locality_b: 1895858198
+      random_bytestring: 1146
+      random_bytestring: 0
+      random_bytestring: 32768
+      random_bytestring: 6255717
+      random_bytestring: 1914731264
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      random_bytestring: 4
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      random_bytestring: 111
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 9
+      num_hosts_locality_c: 122
+      random_bytestring: 1146
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+      num_hosts_locality_b: 6
+      random_bytestring: 1146
+      random_bytestring: 32
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 10
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      num_hosts_locality_c: 292
+      random_bytestring: 256
+      random_bytestring: 2147483648
+      random_bytestring: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 6
+      num_hosts_locality_b: 292
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 111
+      random_bytestring: 0
+      random_bytestring: 122
+      random_bytestring: 1566
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 111
+      random_bytestring: 7233792
+      random_bytestring: 0
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 122
+      random_bytestring: 122
+      random_bytestring: 7299328
+      random_bytestring: 2147549184
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 6
+      random_bytestring: 6255717
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 122
+      random_bytestring: 1566
+      random_bytestring: 1
+    }
+    setup_priority_levels {
+      random_bytestring: 655360
+    }
+    setup_priority_levels {
+      random_bytestring: 259
+    }
+    setup_priority_levels {
+      num_hosts_locality_a: 18
+      random_bytestring: 2147549184
+      random_bytestring: 256
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 259
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 1566
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_b: 122
+    }
+    setup_priority_levels {
+      random_bytestring: 111
+    }
+    setup_priority_levels {
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 8388608
+    }
+    setup_priority_levels {
+      num_hosts_locality_c: 327936
+      random_bytestring: 6
+    }
+    setup_priority_levels {
+      num_hosts_in_priority_level: 253
+      num_hosts_locality_a: 9
+    }
+    seed_for_prng: 7305728
+  }
+  random_bytestring_for_weights: "%"
+}
