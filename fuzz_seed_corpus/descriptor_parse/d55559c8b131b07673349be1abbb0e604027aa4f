@@ -1,0 +1,1 @@
+andor(or_i(0,1),0,andor(andor(n:0,or_i(1,1),0),0,andor(0,0,andor(n:0,0,1))))

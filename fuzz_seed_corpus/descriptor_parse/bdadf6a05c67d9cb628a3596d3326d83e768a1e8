@@ -1,0 +1,1 @@
+sh(and_v(and_v(and_v(1,or_c(u:1,1)),or_c(u:1,v:1)),or_c(u:1,or_c(u:1,1)))

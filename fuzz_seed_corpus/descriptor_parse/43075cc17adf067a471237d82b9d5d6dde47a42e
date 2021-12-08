@@ -1,0 +1,1 @@
+nt:andor(or_i(pk(021),multi(1,21)),an:or_i(v:after(1),or_i(andor(hash160(f9e2bef066e03a929af5916c001b8e998337fba3),older(9),n:older(15423)),or_i(v:1,v:sha256(2a6e6d75c551ce1561effff95996ccdf6b94ae76755dc39a73dca5d8ed65c606))))

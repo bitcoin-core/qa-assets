@@ -1,0 +1,1 @@
+and_b(andor(ripemd160(a70d1e707919fbbe4e9f10c5bd1a85022deac7a3),n:and_b(u:pk(3b),atv:0),and_n(pkh(44f7790),and_b(1,s:pk(5)))),tv:and_n(u:and_b(c:or_i(pk_h(3),pk_h(1)),atv:pkh(3d)),lj:hash256(3549f23b02b365fbff385d563020d6f45cd85052fd8adeda2b179167ff061a06)))

@@ -1,0 +1,1 @@
+wsh(t:and_v(and_v(and_v(and_v(v:thresh(1,nn:thresh(1,thresh(1,n:0))),v:thresh(1,thresh(1,thresh(1,thresh(1,0))))),vn:thresh(1,0)),v:older(9)),v:older(1)))

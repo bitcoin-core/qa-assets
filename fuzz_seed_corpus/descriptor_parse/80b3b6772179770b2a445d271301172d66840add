@@ -1,0 +1,1 @@
+l:and_v(v:thresh(2,d:and_v(v:1,v:1),a:or_b(dv:older(144),su:older(03))),a:thresh(2,da:thresh(2,d:and_v(v:1,v:1),a:or_b(dv:older(14334),su:older(03))),a:thresh(2,d:and_v(v:1,v:1),a:or_b(dv:older(334),su:older(3)))

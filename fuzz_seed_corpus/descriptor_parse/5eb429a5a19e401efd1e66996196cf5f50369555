@@ -1,0 +1,1 @@
+l:thresh(2,d:and_v(v:1,1),a:or_d(pk(:1),a:or_d(pk(6),su:pk(03))),a:thresh(2,d:and_v(v:1,1),a:or_d(pk(0),su:older(1))),or_d(pk(,v:1),a:or_d(pk(0),u:older(1))),or_d(pk(:1),a:or_d(pk(dv:),su:or_d(pk(0a),pkh(3e3))))
