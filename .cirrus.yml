@@ -1,13 +1,14 @@
 task:
-  name: "[system libs, no depends, fuzz, valgrind]  [focal]"
+  name: "[system libs, no depends, fuzz, valgrind]  [jammy]"
   container:
-    image: ubuntu:20.04
-    cpu: 8
-    memory: 12G
+    image: ubuntu:22.04
+    cpu: 4
+    memory: 16G
+    greedy: true
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
-    MAKEJOBS: "-j16"
+    MAKEJOBS: "-j20"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
@@ -23,15 +24,16 @@ task:
     - cd /tmp/bitcoin-core
     - ./ci/test_run_all.sh
 task:
-  name: "[depends, fuzz, msan]  [focal]"
+  name: "[depends, fuzz, msan]  [jammy]"
   container:
-    image: ubuntu:20.04
+    image: ubuntu:22.04
     cpu: 4
-    memory: 12G
+    memory: 16G
+    greedy: true
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_msan.sh"
-    MAKEJOBS: "-j8"
+    MAKEJOBS: "-j10"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
@@ -48,15 +50,16 @@ task:
     - sed -i 's|FuzzedDataProvider fuzzed_data_provider|return;FuzzedDataProvider fuzzed_data_provider|g'  ./src/test/fuzz/strprintf.cpp  # Avoid tinyformat issue
     - ./ci/test_run_all.sh
 task:
-  name: "[system libs, no depends, fuzz, sanitizers]  [focal]"
+  name: "[system libs, no depends, fuzz, sanitizers]  [jammy]"
   container:
-    image: ubuntu:20.04
+    image: ubuntu:22.04
     cpu: 4  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
-    memory: 12G
+    memory: 16G
+    greedy: true
   timeout_in: 120m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
-    MAKEJOBS: "-j8"
+    MAKEJOBS: "-j10"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
