@@ -24,9 +24,9 @@ task:
     - cd /tmp/bitcoin-core
     - ./ci/test_run_all.sh
 task:
-  name: "[depends, fuzz, msan]  [jammy]"
+  name: "[depends, fuzz, msan]  [focal]"
   container:
-    image: ubuntu:22.04
+    image: ubuntu:20.04
     cpu: 4
     memory: 16G
     greedy: true
