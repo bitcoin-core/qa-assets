@@ -1,0 +1,1 @@
+and_n(0,thresh(7,0,and_n(l:1,0),and_n(l:1,0),thresh(3,and_n(l:1,0),and_n(l:1,0),and_n(l:1,0),0,and_n(l:1,0),0,and_n(l:1,0),0),and_n(l:1,0),0,1))
