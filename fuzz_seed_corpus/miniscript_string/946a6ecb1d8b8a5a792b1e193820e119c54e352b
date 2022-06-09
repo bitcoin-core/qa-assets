@@ -1,1 +1,0 @@
-thresh(2,thresh(2,or_i(1,multi(1,04,01,04)),thresh(2,or_i(1,multi(1,01)),or_i(1,multi(1,01,04)),0,0)),thresh(2,or_i(1,multi(1,04,04)),thresh(2,or_i(1,multi(1,04)),multi(1,04))))
