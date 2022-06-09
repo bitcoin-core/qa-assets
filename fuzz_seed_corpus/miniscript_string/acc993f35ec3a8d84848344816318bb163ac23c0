@@ -1,0 +1,1 @@
+thresh(3,after(7),av:older(3),older(5),older(8),v:older(8),thresh(1,thresh(1,0),1))
