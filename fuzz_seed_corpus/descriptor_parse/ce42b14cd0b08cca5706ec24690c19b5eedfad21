@@ -1,0 +1,1 @@
+thresh(3,d:and_v(v:1,v:1),a:or_b(dv:older(1),sj:older(13))),1)
