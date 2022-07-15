@@ -1,0 +1,1 @@
+nn:thresh(1,thresh(1,nnl:after(0530),snl:after(099)),sn:thresh(2,nl:after(5),snl:after(530),snnl:after(309)),lnn:thresh(1,nl:after(0530),snl:after(2))

@@ -1,0 +1,1 @@
+and_v(v:and_v(after(1),t:older(7)),and_v(v:and_v(v:after(1),t:older(4)),t:older(7)))
