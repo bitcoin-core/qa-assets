@@ -1,7 +1,7 @@
 task:
-  name: "[system libs, no depends, fuzz, valgrind]  [bookworm]"
+  name: "[system libs, no depends, fuzz, valgrind]  [jammy]"
   container:
-    image: debian:bookworm  # Use bookworm to avoid clang-14 bug
+    image: ubuntu:22.04
     cpu: 4
     memory: 16G
     greedy: true
