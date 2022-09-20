@@ -1,0 +1,1 @@
+thresh(3,0,thresh(1,0,l:1,1),thresh(3,0,thresh(3,0,0,l:1,1,a:1),n:thresh(3,0,n:0,al:0,1,al:0),n:thresh(3,0,a:1,1,1,a:1),1)))

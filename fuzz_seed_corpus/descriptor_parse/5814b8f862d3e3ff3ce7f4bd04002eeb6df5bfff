@@ -1,0 +1,1 @@
+t:and_b(thresh(2,0,v:and_v(v:after(9204),0),a:after(2),or_i(thresh(2,0,sdv:and_v(v:after(82),0),and_b(l:after(28),a:0),l:after(3),a:0),1))

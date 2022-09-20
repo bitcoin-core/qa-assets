@@ -1,0 +1,1 @@
+wsh(thresh(3,0,an:thresh(4,0,a:0,al:0,a:1,al:1),n:thresh(1,0,1,al:1,al:1,n:thresh(3,0,1,al:1,al:1,n:0,al:1,al:0,nn:0,al:1),nn:thresh(3,0,al:1,1,al:1,nn:1),thresh(3,0,al:1,a:1,al:1,a:1,al:0,annnnnn:0,a:1,cal:1),1,al:1))hsh)
