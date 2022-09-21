@@ -1,0 +1,1 @@
+thresh(10,multi(1,58),0,1,0,thresh(1,1,multi(1,80),multi(1,71,79),0),1,0,0,0,0,thresh(1,1,0,0,multi(1,80),multi(1,70,49),0,0,thresh(1,1,multi(1,80),multi(1,70,49),0,0,multi(1,79),0),1,multi(1,69),0))
