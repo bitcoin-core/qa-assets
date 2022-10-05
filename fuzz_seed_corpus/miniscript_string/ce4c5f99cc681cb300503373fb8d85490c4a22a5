@@ -1,0 +1,1 @@
+thresh(3,dt:multi(1,41,21,F4,2F),dv:older(5),av:older(6061))
