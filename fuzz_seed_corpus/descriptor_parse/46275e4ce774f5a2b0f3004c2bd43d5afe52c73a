@@ -1,1 +1,0 @@
-n:thresh(1,n:thresh(2,nnl:older(60),snnl:after(00005),snl:after(300),snnl:0))

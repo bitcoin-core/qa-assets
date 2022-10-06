@@ -1,1 +1,0 @@
-nn:andor(nn:thresh(2,n:thresh(2,nl:after(3),snnl:after(500)),snl:after(9)),n:0,a:older(205))

@@ -1,1 +1,0 @@
-t:thresh(2,or_b(dv:after(70014),s:ripemd160(f132a5003d13ef82d6b2195ea03529ee647cba96)),a:and_b(n:or_b(lnnc:and_v(vl:after(1752465316),pk_h(0356568)),au:or_i(n:0,and_b(hash256(12348e18d11b22da887592455f7fac225fdca894531a35c8968a6f8a46418b65),a:ripemd160(e7c2e62c31dddb647a7a59a2234bad76ce28b418)))),a:and_n(or_i(thresh(2,pk(029d),a:pk(0c77683a8b1)),1),pk(0_h(8)))))
