@@ -1,0 +1,1 @@
+wsh(or_c(or_i(l:0,1),andor(andor(0,or_i(l:0,1),n:0),0,0)))

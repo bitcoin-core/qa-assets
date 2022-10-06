@@ -1,0 +1,1 @@
+thresh(2,1,thresh(3,1,thresh(1,thresh(1,andor(j:1,1,thresh(1,andor(thresh(1,andor(thresh(1,1),1,1),1,1),1,1))),andor(andor(1,1,thresh(1,andor(thresh(1,andor(thresh(1,1),1,1),andor(thresh(1,and_n(1,0),1),1,1),1,1),1,1))),1,1))),0))
