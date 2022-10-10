@@ -1,1 +1,0 @@
-nnn:thresh(1,n:1,n:thresh(4,n:1,n:thresh(4,n:1,n:tr_l:0)))

@@ -1,1 +1,0 @@
-wsh(n:andor(or_i(0,1),0,andor(andor(0,0,and_n(0,0)),0,andor(0,0,andor(n:0,0,n:and_n(0,0))))))

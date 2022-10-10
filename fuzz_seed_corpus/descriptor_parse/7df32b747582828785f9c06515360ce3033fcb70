@@ -1,1 +1,0 @@
-wsh(t:and_v(a:thresh(1,thresh(1,thresh(1,0))),v:thresh(1,thresh(1,thresh(1,n:thresh(1,0))))),t)
