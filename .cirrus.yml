@@ -1,3 +1,5 @@
+env:
+  CIRRUS_CLONE_DEPTH: 1
 task:
   name: "[system libs, no depends, fuzz, valgrind]  [jammy]"
   container:
