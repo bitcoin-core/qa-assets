@@ -1,0 +1,1 @@
+	"sh(thresh(1,thresh(1,l:1),al:thresh(2,1,thresh(1,l:1),al:thresh(1,thresh(1,l:1),a:thresh(1,l:1),0,1,thresh(1,l:1),al:thresh(1,l:1),thresh(1,thresh(1,l:1),al:0,1,thresh(1,l:1),al:thresh(1,thresh(1,l:1),a:thresh(1,l:1),0,1,thresh(1,l:1),1,thresh(1,l:1),al:thresh(2,0,1,thresh(1,l:1),al:thresh(1,thresh(1,l:1),thresh(2,l:0,al:1),al:0,1,thresh(1,l:1),1,thresh(1,l:1)l:)"
