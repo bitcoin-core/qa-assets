@@ -1,13 +1,22 @@
 env:
   CIRRUS_CLONE_DEPTH: 1
+
+compute_credits_template: &CREDITS_TEMPLATE
+  # https://cirrus-ci.org/pricing/#compute-credits
+  # Only use credits for pull requests to the qa-assets repo
+  # TODO maybe only use credits if $CIRRUS_BRANCH == 'main'
+  use_compute_credits: $CIRRUS_REPO_FULL_NAME == 'bitcoin-core/qa-assets'
+
 task:
   name: "[system libs, no depends, fuzz, valgrind]  [bookworm]"
   container:
     image: debian:bookworm
-    cpu: 4
-    memory: 16G
+    cpu: 3
+    memory: 12G
     greedy: true
-  timeout_in: 120m
+  timeout_in: 480m
+  # To avoid timeouts use some credits
+  << : *CREDITS_TEMPLATE
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
     MAKEJOBS: "-j20"
