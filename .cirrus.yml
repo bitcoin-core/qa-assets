@@ -1,9 +1,9 @@
 env:
   CIRRUS_CLONE_DEPTH: 1
 task:
-  name: "[system libs, no depends, fuzz, valgrind]  [jammy]"
+  name: "[system libs, no depends, fuzz, valgrind]  [bookworm]"
   container:
-    image: ubuntu:22.04
+    image: debian:bookworm
     cpu: 4
     memory: 16G
     greedy: true
@@ -26,9 +26,9 @@ task:
     - cd /tmp/bitcoin-core
     - ./ci/test_run_all.sh
 task:
-  name: "[depends, fuzz, msan]  [focal]"
+  name: "[depends, fuzz, msan]  [lunar]"
   container:
-    image: ubuntu:20.04
+    image: ubuntu:23.04
     cpu: 4
     memory: 16G
     greedy: true
@@ -52,9 +52,9 @@ task:
     - sed -i 's|FuzzedDataProvider fuzzed_data_provider|return;FuzzedDataProvider fuzzed_data_provider|g'  ./src/test/fuzz/strprintf.cpp  # Avoid tinyformat issue
     - ./ci/test_run_all.sh
 task:
-  name: "[system libs, no depends, fuzz, sanitizers]  [jammy]"
+  name: "[system libs, no depends, fuzz, sanitizers]  [lunar]"
   container:
-    image: ubuntu:22.04
+    image: ubuntu:23.04
     cpu: 4  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
     memory: 16G
     greedy: true
