@@ -1,0 +1,1 @@
+andor(multi(1,3b),or_d(multi(20,3b,3b,3b,3b,3b,3b,3b,72,72,3b,3b,3b,3b,3b,3b,3b,3b,3b,2b,3b),or_d(multi(20,3b,3b,3b,3b,3b,3b,30,3b,41,5d,3b,3b,23,3b,3b,3b,3b,3b,3b,3b),or_d(n:multi(20,3b,3b,3b,3b,3b,3b,3b,72,72,72,72,72,3b,3b,3b,3b,3b,3b,3b,3b),or_d(n:multi(2,3b,3b,3f,ff),after(32))))),after(32))
