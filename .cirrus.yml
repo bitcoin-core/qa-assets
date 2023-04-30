@@ -11,15 +11,15 @@ task:
   name: "[system libs, no depends, fuzz, valgrind]  [bookworm]"
   container:
     image: debian:bookworm
-    cpu: 3
-    memory: 12G
+    cpu: 2
+    memory: 8G
     greedy: true
-  timeout_in: 480m
+  timeout_in: 720m
   # To avoid timeouts use some credits
   << : *CREDITS_TEMPLATE
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
-    MAKEJOBS: "-j20"
+    MAKEJOBS: "-j12"
     DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
