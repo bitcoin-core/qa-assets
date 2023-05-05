@@ -21,12 +21,12 @@ runner:
 ### Pruning inputs 
 
 * Over time fuzz engines reduce inputs (produce a smaller input that yields the
-  same coverage statistics), which causes our copora to accumulate larger
+  same coverage statistics), which causes our corpora to accumulate larger
   non-reduced inputs. 
 * Code changes can lead to inputs losing their coverage.
 
 To avoid corpora bloat, stale inputs and potential CI timeouts, we usually
-prune/minimize our copora around the branch-off point using the
+prune/minimize our corpora around the branch-off point using the
 [`delete_nonreduced_fuzz_inputs.sh`](https://raw.githubusercontent.com/bitcoin-core/bitcoin-maintainer-tools/main/delete_nonreduced_fuzz_inputs.sh)
 script (Recommended to run in a fresh VM, see documentation in the script). The
 script is usually run twice to ensure that the results are "somewhat"
