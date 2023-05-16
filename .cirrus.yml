@@ -6,7 +6,31 @@ compute_credits_template: &CREDITS_TEMPLATE
   # Only use credits for pull requests to the qa-assets repo
   # TODO maybe only use credits if $CIRRUS_BRANCH == 'main'
   use_compute_credits: $CIRRUS_REPO_FULL_NAME == 'bitcoin-core/qa-assets'
+task:
+  name: "lint"
+  container:
+    image: ubuntu:jammy
+    cpu: 1
+    memory: 4G  # Needed to clone the qa-assets repo?
+    greedy: true
+  use_compute_credits: true
+  only_if: $CIRRUS_BASE_BRANCH == 'main'
+  stateful: false  # https://cirrus-ci.org/guide/writing-tasks/#stateful-tasks
+  setup_script: apt-get update && apt-get install -y git
+  merge_base_script:
+    - git fetch $CIRRUS_REPO_CLONE_URL "pull/${CIRRUS_PR}/merge"
+    - git checkout FETCH_HEAD  # Derive full diff based on merge commit, see lint_script
 
+  cargo_target_cache:
+    folder: out-dir
+    fingerprint_script: git log -1 -- ./contrib/touched-files-check/ .cirrus.yml
+    populate_script:
+      - mkdir out-dir
+      - apt-get install -y cargo
+      - cd ./contrib/touched-files-check
+      - cargo build
+      - mv ./target/debug/touched-files-check ./../../out-dir/
+  lint_script: ./out-dir/touched-files-check "HEAD~..HEAD"
 task:
   name: "[system libs, no depends, fuzz, valgrind]  [bookworm]"
   container:
