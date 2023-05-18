@@ -1,4 +1,4 @@
-env:
+env:  # Global defaults
   CIRRUS_CLONE_DEPTH: 1
 
 compute_credits_template: &CREDITS_TEMPLATE
@@ -32,34 +32,27 @@ task:
       - mv ./target/debug/touched-files-check ./../../out-dir/
   lint_script: ./out-dir/touched-files-check "HEAD~..HEAD"
 task:
-  name: "[system libs, no depends, fuzz, valgrind]  [bookworm]"
-  container:
-    image: debian:bookworm
-    cpu: 2
-    memory: 8G
-    greedy: true
-  timeout_in: 720m
-  # To avoid timeouts use some credits
-  << : *CREDITS_TEMPLATE
+  name: "[native_fuzz_with_valgrind]  [persistent_worker]"
+  persistent_worker: {}  # https://cirrus-ci.org/guide/persistent-workers/ , PERSISTENT_WORKER_TEMPLATE
+  timeout_in: 2160m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
-    MAKEJOBS: "-j12"
-    DANGER_RUN_CI_ON_HOST: "1"
+    MAKEJOBS: "-j6"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
+    RESTART_CI_DOCKER_BEFORE_RUN: "1"  # PERSISTENT_WORKER_TEMPLATE_ENV
   ccache_cache:
     folder: "/tmp/ccache_dir"
   upstream_clone_script:
-    - cd /tmp
     - apt update && apt install git -y
     - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
-    - mkdir -p /tmp/bitcoin-core/ci/scratch
-    - mv /tmp/cirrus-ci-build /tmp/bitcoin-core/ci/scratch/qa-assets
+    - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
+    - mv ./fuzz_seed_corpus ./bitcoin-core/ci/scratch/qa-assets/
   ci_script:
-    - cd /tmp/bitcoin-core
+    - cd ./bitcoin-core
     - ./ci/test_run_all.sh
 task:
-  name: "[depends, fuzz, msan]  [lunar]"
+  name: "[native_fuzz_with_msan]  [lunar]"
   container:
     image: ubuntu:23.04
     cpu: 4
@@ -85,7 +78,7 @@ task:
     - sed -i 's|FuzzedDataProvider fuzzed_data_provider|return;FuzzedDataProvider fuzzed_data_provider|g'  ./src/test/fuzz/strprintf.cpp  # Avoid tinyformat issue
     - ./ci/test_run_all.sh
 task:
-  name: "[system libs, no depends, fuzz, sanitizers]  [lunar]"
+  name: "[native_fuzz]  [lunar]"
   container:
     image: ubuntu:23.04
     cpu: 4  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
