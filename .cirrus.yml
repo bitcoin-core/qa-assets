@@ -34,7 +34,7 @@ task:
 task:
   name: "[native_fuzz_with_valgrind]  [persistent_worker]"
   persistent_worker: {}  # https://cirrus-ci.org/guide/persistent-workers/ , PERSISTENT_WORKER_TEMPLATE
-  timeout_in: 2160m
+  timeout_in: 4320m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
     MAKEJOBS: "-j6"
@@ -47,7 +47,7 @@ task:
     - apt update && apt install git -y
     - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
     - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
-    - mv ./fuzz_seed_corpus ./bitcoin-core/ci/scratch/qa-assets/
+    - mv ./{.git,fuzz_seed_corpus} ./bitcoin-core/ci/scratch/qa-assets/
   ci_script:
     - cd ./bitcoin-core
     - ./ci/test_run_all.sh
@@ -68,14 +68,12 @@ task:
   ccache_cache:
     folder: "/tmp/ccache_dir"
   upstream_clone_script:
-    - cd /tmp
     - apt update && apt install git -y
     - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
-    - mkdir -p /tmp/bitcoin-core/ci/scratch
-    - mv /tmp/cirrus-ci-build /tmp/bitcoin-core/ci/scratch/qa-assets
+    - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
+    - mv ./{.git,fuzz_seed_corpus} ./bitcoin-core/ci/scratch/qa-assets/
   ci_script:
-    - cd /tmp/bitcoin-core
-    - sed -i 's|FuzzedDataProvider fuzzed_data_provider|return;FuzzedDataProvider fuzzed_data_provider|g'  ./src/test/fuzz/strprintf.cpp  # Avoid tinyformat issue
+    - cd ./bitcoin-core
     - ./ci/test_run_all.sh
 task:
   name: "[native_fuzz]  [lunar]"
@@ -94,11 +92,10 @@ task:
   ccache_cache:
     folder: "/tmp/ccache_dir"
   upstream_clone_script:
-    - cd /tmp
     - apt update && apt install git -y
     - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
-    - mkdir -p /tmp/bitcoin-core/ci/scratch
-    - mv /tmp/cirrus-ci-build /tmp/bitcoin-core/ci/scratch/qa-assets
+    - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
+    - mv ./{.git,fuzz_seed_corpus} ./bitcoin-core/ci/scratch/qa-assets/
   ci_script:
-    - cd /tmp/bitcoin-core
+    - cd ./bitcoin-core
     - ./ci/test_run_all.sh
