@@ -52,9 +52,9 @@ task:
     - cd ./bitcoin-core
     - ./ci/test_run_all.sh
 task:
-  name: "[native_fuzz_with_msan]  [lunar]"
+  name: "[native_fuzz_with_msan]  [jammy]"
   container:
-    image: ubuntu:23.04
+    image: ubuntu:22.04
     cpu: 4
     memory: 16G
     greedy: true
