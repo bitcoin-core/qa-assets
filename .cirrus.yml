@@ -52,19 +52,15 @@ task:
     - cd ./bitcoin-core
     - ./ci/test_run_all.sh
 task:
-  name: "[native_fuzz_with_msan]  [jammy]"
-  container:
-    image: ubuntu:22.04
-    cpu: 4
-    memory: 16G
-    greedy: true
-  timeout_in: 120m
+  name: "[native_fuzz_with_msan]  [persistent_worker]"
+  persistent_worker: {}  # https://cirrus-ci.org/guide/persistent-workers/ , PERSISTENT_WORKER_TEMPLATE
+  timeout_in: 480m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_msan.sh"
-    MAKEJOBS: "-j10"
-    DANGER_RUN_CI_ON_HOST: "1"
+    MAKEJOBS: "-j6"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
+    RESTART_CI_DOCKER_BEFORE_RUN: "1"  # PERSISTENT_WORKER_TEMPLATE_ENV
   ccache_cache:
     folder: "/tmp/ccache_dir"
   upstream_clone_script:
