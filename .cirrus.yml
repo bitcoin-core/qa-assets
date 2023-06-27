@@ -45,7 +45,7 @@ task:
     folder: "/tmp/ccache_dir"
   upstream_clone_script:
     - apt update && apt install git -y
-    - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
+    - git clone https://github.com/fanquake/bitcoin --depth=1 -b valgrind_build_from_source ./bitcoin-core
     - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
     - mv ./{.git,fuzz_seed_corpus} ./bitcoin-core/ci/scratch/qa-assets/
   ci_script:
