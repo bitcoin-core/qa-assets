@@ -1,20 +1,21 @@
 env:  # Global defaults
   CIRRUS_CLONE_DEPTH: 1
 
-compute_credits_template: &CREDITS_TEMPLATE
-  # https://cirrus-ci.org/pricing/#compute-credits
-  # Only use credits for pull requests to the qa-assets repo
-  # TODO maybe only use credits if $CIRRUS_BRANCH == 'main'
-  use_compute_credits: $CIRRUS_REPO_FULL_NAME == 'bitcoin-core/qa-assets'
+# Use the same types as the ones defined in https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
+persistent_worker_template_small: &PERSISTENT_WORKER_TEMPLATE_SMALL
+  persistent_worker:
+    labels:
+      type: small  # The type should not matter, but pin it to avoid non-determinism, or breakages down the line.
+
 task:
   name: "lint"
   container:
     image: ubuntu:jammy
     cpu: 1
     memory: 4G  # Needed to clone the qa-assets repo?
-    greedy: true
-  use_compute_credits: true
-  only_if: $CIRRUS_BASE_BRANCH == 'main'
+  use_compute_credits: true  # https://cirrus-ci.org/pricing/#compute-credits
+  # https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution: Skip forks and non-pulls, to avoid needless costs
+  skip: $CIRRUS_REPO_OWNER != 'bitcoin-core' || $CIRRUS_PR == ""
   stateful: false  # https://cirrus-ci.org/guide/writing-tasks/#stateful-tasks
   setup_script: apt-get update && apt-get install -y git
   merge_base_script:
@@ -33,7 +34,7 @@ task:
   lint_script: ./out-dir/touched-files-check "HEAD~..HEAD"
 task:
   name: "[native_fuzz_with_valgrind]  [persistent_worker]"
-  persistent_worker: {}  # https://cirrus-ci.org/guide/persistent-workers/ , PERSISTENT_WORKER_TEMPLATE
+  << : *PERSISTENT_WORKER_TEMPLATE_SMALL
   timeout_in: 4320m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
@@ -53,7 +54,7 @@ task:
     - ./ci/test_run_all.sh
 task:
   name: "[native_fuzz_with_msan]  [persistent_worker]"
-  persistent_worker: {}  # https://cirrus-ci.org/guide/persistent-workers/ , PERSISTENT_WORKER_TEMPLATE
+  << : *PERSISTENT_WORKER_TEMPLATE_SMALL
   timeout_in: 480m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_msan.sh"
@@ -72,19 +73,15 @@ task:
     - cd ./bitcoin-core
     - ./ci/test_run_all.sh
 task:
-  name: "[native_fuzz]  [lunar]"
-  container:
-    image: ubuntu:23.04
-    cpu: 4  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
-    memory: 16G
-    greedy: true
-  timeout_in: 120m
+  name: "[native_fuzz]  [persistent_worker]"
+  << : *PERSISTENT_WORKER_TEMPLATE_SMALL
+  timeout_in: 120m  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
     MAKEJOBS: "-j10"
-    DANGER_RUN_CI_ON_HOST: "1"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
+    RESTART_CI_DOCKER_BEFORE_RUN: "1"  # PERSISTENT_WORKER_TEMPLATE_ENV
   ccache_cache:
     folder: "/tmp/ccache_dir"
   upstream_clone_script:
