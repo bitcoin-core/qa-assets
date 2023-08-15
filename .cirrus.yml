@@ -13,9 +13,9 @@ task:
     image: ubuntu:jammy
     cpu: 1
     memory: 4G  # Needed to clone the qa-assets repo?
-  use_compute_credits: true  # https://cirrus-ci.org/pricing/#compute-credits
-  # https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution: Skip forks and non-pulls, to avoid needless costs
-  skip: $CIRRUS_REPO_OWNER != 'bitcoin-core' || $CIRRUS_PR == ""
+  use_compute_credits: $CIRRUS_REPO_OWNER == 'bitcoin-core'  # https://cirrus-ci.org/pricing/#compute-credits
+  # https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution: Skip needless compute on non-pulls
+  skip: $CIRRUS_PR == ""
   stateful: false  # https://cirrus-ci.org/guide/writing-tasks/#stateful-tasks
   setup_script: apt-get update && apt-get install -y git
   merge_base_script:
@@ -41,7 +41,6 @@ task:
     MAKEJOBS: "-j6"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
-    RESTART_CI_DOCKER_BEFORE_RUN: "1"  # PERSISTENT_WORKER_TEMPLATE_ENV
   ccache_cache:
     folder: "/tmp/ccache_dir"
   upstream_clone_script:
@@ -61,7 +60,6 @@ task:
     MAKEJOBS: "-j6"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
-    RESTART_CI_DOCKER_BEFORE_RUN: "1"  # PERSISTENT_WORKER_TEMPLATE_ENV
   ccache_cache:
     folder: "/tmp/ccache_dir"
   upstream_clone_script:
@@ -81,7 +79,6 @@ task:
     MAKEJOBS: "-j10"
     CCACHE_SIZE: "200M"
     CCACHE_DIR: "/tmp/ccache_dir"
-    RESTART_CI_DOCKER_BEFORE_RUN: "1"  # PERSISTENT_WORKER_TEMPLATE_ENV
   ccache_cache:
     folder: "/tmp/ccache_dir"
   upstream_clone_script:
