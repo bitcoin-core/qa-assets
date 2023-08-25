@@ -72,7 +72,9 @@ task:
     - ./ci/test_run_all.sh
 task:
   name: "[native_fuzz]  [persistent_worker]"
-  << : *PERSISTENT_WORKER_TEMPLATE_SMALL
+  persistent_worker:
+    labels:
+      type: medium  # Replicate config;
   timeout_in: 120m  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
