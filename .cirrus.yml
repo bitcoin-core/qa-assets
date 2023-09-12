@@ -1,18 +1,14 @@
 env:  # Global defaults
   CIRRUS_CLONE_DEPTH: 1
 
-# Use the same types as the ones defined in https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
-persistent_worker_template_small: &PERSISTENT_WORKER_TEMPLATE_SMALL
-  persistent_worker:
-    labels:
-      type: small  # The type should not matter, but pin it to avoid non-determinism, or breakages down the line.
-
 task:
   name: "lint"
-  container:
-    image: ubuntu:jammy
+  compute_engine_instance:
+    disk: 50
     cpu: 1
     memory: 4G  # Needed to clone the qa-assets repo?
+    image_project: ubuntu-os-cloud
+    image: family/ubuntu-2204-lts
   use_compute_credits: $CIRRUS_REPO_OWNER == 'bitcoin-core'  # https://cirrus-ci.org/pricing/#compute-credits
   # https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution: Skip needless compute on non-pulls
   skip: $CIRRUS_PR == ""
@@ -34,7 +30,9 @@ task:
   lint_script: ./out-dir/touched-files-check "HEAD~..HEAD"
 task:
   name: "[native_fuzz_with_valgrind]  [persistent_worker]"
-  << : *PERSISTENT_WORKER_TEMPLATE_SMALL
+  persistent_worker:
+    labels:
+      type: medium  # Avoid out-of-disk issues
   timeout_in: 4320m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
@@ -53,7 +51,9 @@ task:
     - ./ci/test_run_all.sh
 task:
   name: "[native_fuzz_with_msan]  [persistent_worker]"
-  << : *PERSISTENT_WORKER_TEMPLATE_SMALL
+  persistent_worker:
+    labels:
+      type: medium  # Avoid out-of-disk issues
   timeout_in: 480m
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_msan.sh"
@@ -75,6 +75,7 @@ task:
   persistent_worker:
     labels:
       type: medium  # Replicate config;
+  # Use the same type as the one used for native_fuzz in https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
   timeout_in: 120m  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
