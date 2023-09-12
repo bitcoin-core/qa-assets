@@ -3,12 +3,10 @@ env:  # Global defaults
 
 task:
   name: "lint"
-  compute_engine_instance:
-    disk: 50
+  container:
+    image: ubuntu:jammy
     cpu: 1
     memory: 4G  # Needed to clone the qa-assets repo?
-    image_project: ubuntu-os-cloud
-    image: family/ubuntu-2204-lts
   use_compute_credits: $CIRRUS_REPO_OWNER == 'bitcoin-core'  # https://cirrus-ci.org/pricing/#compute-credits
   # https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution: Skip needless compute on non-pulls
   skip: $CIRRUS_PR == ""
