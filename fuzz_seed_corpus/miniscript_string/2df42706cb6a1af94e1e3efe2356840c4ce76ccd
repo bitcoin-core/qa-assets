@@ -1,0 +1,1 @@
+and_b(thresh(2,or_b(1,or_b(0,0)),or_b(1,or_b(0,0))),or_b(0,0))(
