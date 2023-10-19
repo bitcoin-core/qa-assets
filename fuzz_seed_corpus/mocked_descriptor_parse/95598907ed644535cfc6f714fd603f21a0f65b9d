@@ -1,0 +1,1 @@
+wsh(thresh(1,0,or_b(pk(%70),pk(%36)),thresh(11,0,or_b(pk(%35),pk(%36)),thresh(1,0,or_b(pk(%34),pk(%36)),0,or_b(pk(%70),pk(%36)),thresh(11,0,or_b(pk(%35),pk(%36)),thresh(1,0,or_b(pk(%70),pk(%36)),thresh(11,0,or_b(pk(%35),pk(%36)),thresh(1,0,or_b(pk(%34),pk(%36)),0,or_b(pk(%70),pk(%36)),thresh(pk(%35),pk(%36)),thres0)0),0)
