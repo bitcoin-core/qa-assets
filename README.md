@@ -13,8 +13,8 @@ folder per target named the same as each target).
 [fuzzing.md](https://github.com/bitcoin/bitcoin/blob/master/doc/fuzzing.md).*
 
 If you want to contribute fuzz inputs, please "merge" the inputs before
-submitting a pull request. You can use the libFuzzer option `-merge=1`
-(recommended with `-use_value_profile=1`) or the `--m_dir` option of the fuzz
+submitting a pull request. You can use the libFuzzer option `-set_cover_merge=1`
+(recommended with `-use_value_profile=0`) or the `--m_dir` option of the fuzz
 runner:
 [`test_runner.py`](https://github.com/bitcoin/bitcoin/blob/master/test/fuzz/test_runner.py).
 
