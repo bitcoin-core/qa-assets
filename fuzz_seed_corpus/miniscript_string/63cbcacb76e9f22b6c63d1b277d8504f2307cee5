@@ -1,1 +1,0 @@
-and_n(1,thresh(2,and_n(1,0),thresh(2,and_n(1,0),and_n(1,0))))
