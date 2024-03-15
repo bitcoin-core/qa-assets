@@ -1,0 +1,1 @@
+nn:or_b(thresh(1,n:or_b(l:after(2),sl:after(9))),or_b(thresh(1,n:or_b(l:after(5),snl:after(9))),thresh(1,n:or_b(l:after(9),snl:after(9)))

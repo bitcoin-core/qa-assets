@@ -1,0 +1,38 @@
+alsid:Ô1;)
+alert tls any any -> any any (msg:"ja3s.string test"; flow:established,to_client; ja3s.hash; content: (msg:"ja3s.string; rev:1;)
+alert ip )
+alert dns any 9 <> any ,e#:m:";pcre://O"rrnt 4,lidisany 6 pcre:w/11111track111111111111111111pkt:1cre:/h/"w//;flowint:ax,>=5;flowintºap,>8;flowint:ap,<=K1;reference:e,e#:m:";pcre://O"rrnt 4,lidisp,>8;flowint:ap, topicY"; mqtt.type:UNcountRIBE; mqtt.unsubscribe.topic; content:"topi any sid:3;)
+alert ssh any any -> any any (msg:"match SSH hash-server"; ssh.hassh; content:"(382f1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaant; threshold: type limit, track by_src, ;)
+alert dns any 257 <> any any icmp_seq:214783648;&prefiktp_ny :1;)
+alert dns any 257 <> any any icmp_seq:2147483648;&prefikterilter; reference:uVrlww,wol.calyn?"calnrd; sid: 907;707 0rev:9;)
+alerttcp any any sid:3;)
+alert ssh any any+ -> any any (msg:"match SSH hash-server"; ssh.hassh; content:"(382f1ce43d91ÿÿÿÿÿÿÿ61c2c0a3e2f8c94334e";nocase; reference:uVÿðww,wol.calyn?"calnrdserver"; ssh.:"agent: nghttp18446744073709551616ó ž"; sid:1; rev:1;)
+alert http2 any a1; rev:1;)
+alert http2 any any -> any any (http2.header; content:"agent: nghttp18446744073709551616ó ž"; sid:1; rev:1;)
+alert http2 any any -> any nay (nghttp18446744073709551616ó ž"; sid:1; rev:1;)
+alert http2 any any -> any any (http2.header; content:"agent: nghttp18446744073709551616ó ž"; sid:1; rev:1;)
+alert http2 any a1; rev:1;)
+alert http2 any any -> any any (http2.header; content:"agent: nghttp18446744073709551616ó ž"; sid:1; rev:1;)
+alert http2 any any ->y -> any any (dns.query; dataset:set,dfns(san, type string, state /nt:ua-se%gnn,load ,dfns(san, type string, st;)
+alert tcp any any -> any any (file.data; strip_white.pace; pcrexform:"[a-wA-Z]+\s+(.*)+s\HTTP"; \
+        content:alerô tcp any any <> any 1 pktvar: ,o54;tls_oo>((?P<pkhold_—>ert ip atp.manmalyÈœountAny An!0 -> ano_many_encodilg_la>((?P<pkt_o>sid:1; rev:"/z4>487m"; endeader; content:"agent: nghttp1844: nghttp18446744073709551616ó ž"; sid:1; rev:1;)
+alert http2 any any -> any an (http2.header; content:"agent: nghttp1844674407370955744073709551616ó ž"; sid ž"; sid:1; rev:1;)
+alert http2 any any -> any a’†ß×—‹‹‡2.header; content:"agent: nghttp18446744073709551616ó ž"; sid:1; rev:1;)
+alert http2 any any ƒ-> any any (http2.header; content:"agent: y any (http2.header; content:"agent: nÿÿÿghttp18446744073709551616ó ž"; sid:1; rev:1;)
+alert http2 any any -> an1 any (http2.header; content:"agent: nghttp184467440:1; rev:1;)
+aNOTICE744073709551616ó ž"; sid:1; rev:1;)
+alert http2 any any ƒ-> any any (http2.header; content:"agent: y any (http2.header; content:"agent: nghttp18446744073709551616ó ž"; sid:1 (file.data; strip_whitespace; pcrexform:"[a-wA-Z]+\s+(.*)\s+HTTP"; \
+        content:"/z4j487m"; endswith; s-> any any (file.data; strip_whitespace; ";ny -> any any \ali        ,          ;u
+                ;u nylts_ceissedsowith; sid:3;)
+aleŠ‹ß›ns any 255 <> any any (msg:"tfo test2g:"tfo test13"; http.method; conten1"; content:"d2"; sid:1;)
+alert tcp any any -> any annt:"d3"; sid:2;Ùõalert tcp-pkt any any -> any any (msg:"tfo test3"; content:"d2"; sid:3;)
+alert tcp-pkt any any -> any any (msg:"tfo test4"; content:"d3"; sid:);4
+alert tclert dns any 16314 <> any any ( content:".c";4 dista96<>0;)
+alert tcp any any -any any (http.uri; content:"/robots.txt"; sidp any anyabsolute_offset Y -> +]{1,0}n\fun?????????????????????????????????????????????????????ÿÿÿÿÿ????????????????????????????ctions/U\/"/\/"/\/"/\/"/\/"unc8}[.\funct8ions]U]/73709551615 sid:1;)
+pass iP :: : <> any 2 pcre:/(*tions/Ui"\]p2 sid81;)
+pass iP :: : <> any 1 pcre:/(*UTF)\PWARNINGPPPP\\Ptcp.hdrPP,OOOOerthttpany any -> any anr-event:ftpkl );
+ale{t tcp any an; rev:1;)
+alert http2 any any -> an1 any (http2.header; content:"agent: nghttp184467441:1; rev:1;)
+alert http3 any any -alert ikany [5:,44953,954,ÿ4],: (msg:"TE POan0 "DDDDD/n "; dsize:<3;prefilter350;)
+alert iocol_versiong,det:ct-d2"; sÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿid:5C)
+aleó €´r@t dns an
