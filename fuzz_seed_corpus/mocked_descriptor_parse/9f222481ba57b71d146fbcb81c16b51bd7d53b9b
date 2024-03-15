@@ -1,0 +1,1 @@
+thresh(1,0,pk(%44),thresh(1,0,pk(%44),1,or_i(pk(%35),pk(%36)),0,1),thresh(1,0,pk(%44),1,or_i(pk(%35),pk(%18)),0,1)),pk
