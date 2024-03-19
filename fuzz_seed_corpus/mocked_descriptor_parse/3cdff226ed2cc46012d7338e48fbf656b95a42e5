@@ -1,1 +1,0 @@
-nd:thresh(2,andor(thresh(1,andor(nl:1,1,nl:1),dnd:1),dn:thresh(1,an:thresh(1,andor(nl:1,1,nl:1),dnd:1),dn:thresh(1,andor(nl:1,1,nl:1)),dnhresh(1,andor(nl:1,1,nl:1)),dnd:a)m

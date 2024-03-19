@@ -1,1 +1,0 @@
-c:and_v(or_c(1,0),and_v(v:thresh(1,0),and_v(v:thresh(1,0),and_v(v:thresh(1,0),hash256(fek_k(00))
