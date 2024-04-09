@@ -1,0 +1,139 @@
+# Emerging Threats 
+#
+# This distribution may contain rules under two different licenses. 
+#
+#  Rules with sids 1 through 3464, and 100000000 through 100000908 are under the GPLv2.
+#  A copy of that license is available at http://www.gnu.org/licenses/gpl-2.0.html
+#
+#  Rules with sids 2000000 through 2799999 are from Emerging Threats and are covered under the BSD License 
+#  as follows:
+#
+#*************************************************************
+#  Copyright (c) 2003-2020, Emerging Threats
+#  All rights reserved.
+#  
+#  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the 
+#  following conditions are met:
+#  
+#  * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+#    disclaimer.
+#  * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the 
+#    following disclaimer in the documentation and/or other materials provided with the distribution.
+#  * Neither the name of the nor the names of its contributors may be used to endorse or promote products derived 
+#    from this software without specific prior written permission.
+#  
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+#  INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+#  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+#  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+#  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE 
+#  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+#
+#*************************************************************
+#
+#
+#
+#
+
+# This Ruleset is EmergingThreats Open optimized for suricata-5.0-enhanced.
+
+#alert udp $HOME_NET any -> $EXTERNAL_NET 69 (msg:"ET ATTACK_RESPONSE Cisco TclShell TFTP Read ckdoors_in_Cisco_IOS_using_Tcl.pdf; reference:url,doc.emergingthreats.net/2009244; classtype:bad-unknown; sid:2009244; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+alert udp $EXTERNAL_NET 69 -> $HOME_NET any (msg:"ET ATTACK_RESPONSE Cisco TclShell TFTP Download"; content:"|54 63 6C 53 68 65 6C 6C|"; reference:url,wwww.irmplc.com/downloads/whitepapers/Creating_Backdoors_in_Cisco_IOS_using_Tcl.pdf; reference:url,doc.emergingthreats.net(msg:"ET SHELLCODE Rothenburg Shellcode"; flow:established; content:"|D9 74 24 F4 5B 81 73 13|"; content:"|83 EB FC E2 F4|"; distance:0; reference:url,doc.emergingthreats.net/2009247; classtype:shellcode-detect; sid:2009247; rev:3; metadata:created_at 2010_03_30, updated_at 2010_07_30;)
+
+#alert udp any any -> any any (msg:"ET SHELLCODE Rothenburg Shellcode (UDP)"; content:"|D9 74 24 F4 5B 8shellcode-detect; sid:2009282; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp any any -> any any (msg:"ET SHELLCODE Mainz/Bielefeld Shellcode"; flow:established; content:"|33 c9 66 b9|"; content:"|80 34|"; distance:0; content:"|eb 05 e8 eb ff ff ff|"; distance:0; reference:url,doc.emergingthreats.net/2009250; classtype:shellcode-detect; sid:2009250; rev:3; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp any any -> any any (msg:"ET SHELLCODE Mainz/Bielefeld Shellcode (UDP)"; content:"|33 c9 66 b9|"; content:"|80 34|"; distance:0; content:"|eb 05 e8 eb ff ff ff|"; distance:0; reference:url,doc.emergingthreats.net/2009281; classtype:shellcode-detect; sid:2009281; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp any any -> any any (msg:"ET SHELLCODE Wuerzburg Shellcode"; flow:established; content:"|eb 27|"; content:"|5d 33 c9 66 b9|"; distance:0; content:"|8d 75 05 8b fe 8a 06 3c|"; distance:0; content:"|75 05 46 8a 06|"; distance:0; content:"|88 07 47 e2 ed eb 0a e8 da ff ff ff|"; distance:0; reference:url,doc.emergingthreats.net/2009251; classtype:shellcode-detect; sid:2009251; rev:3; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp any any -> any any (msg:"ET SHELLCODE Wuerzburg Shellcode (UDP)"; content:"|eb 27|"; content:"|5d 33 c9 66 b9|"; distance:0; content:"|8d 75 05 8b fe 8a 06 3c|"; distance:0; content:"|75 05 46 8a 06|"; distance:0; content:"|88 07 47 e2 ed eb 0a e8 da ff ff ff|"; distance:0; reference:url,doc.emergingthreats.net/2009280; classtype:shellcode-detect; sid:2009280; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp any any -> any any (msg:"ET SHELLCODE Schauenburg Shellcode"; flow:established; content:"|eb 0f 8b 34 24 33 c9 80 c1|"; content:"|80 36|"; distance:0; content:"|46 e2 fa c3 e8 ec|"; distance:0; reference:url,doc.emergingthreats.net/2009252; classtype:shellcode-detect; sid:2009252; rev:3; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp any any -> any any (msg:"ET SHELLCODE Schauenburg Shellcode (UDP)"; content:"|eb 0f 8b 34 24 33 c9 80 c1|"; content:"|80 36|"; distance:0; content:"|46 e2 fa c3 e8 ec|"; distance:0; reference:url,doc.emergingthreats.net/2009279; classtype:shellcode-detect; sid:2009279; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp any any -> any any (msg:"ET SHELLCODE Koeln Shellcode"; flow:established; content:"|eb 0f 8b 34 24 33 c9 80 c1|"; content:"|80 36|"; distance:0; content:"|46 e2 fa c3 e8 ec|"; distance:0; reference:url,doc.emergingthreats.net/2009253; classtype:shellcode-detect; sid:2009253; rev:3; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp any any -> any any (msg:"ET SHELLCODE Koeln Shellcode (UDP)"; content:"|eb 0f 8b 34 24 33 c9 8alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET ATTACK_RESPONSE Metasploit Meterpreter rev2self Command Detected"; flow:to_client,established; content:"stdapi_sys_config_rev2self"; depth:52; reference:url,www.nologin.org/Downloads/Papers/meterpreter.pdf; reference:url,doc.emergingthreats.net/2009575; classtype:successful-user; sid:2009575; rev:3; metadata:affected_product Any, attack_target Client_and_Server, created_at 2010_07_30, deployment Perimeter, deployment Internet, deployment Internal, deployment Datacenter, signature_severity Critical, tag Metasploit, updated_at 2016_07_01;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET ATTACK_RESPONSE Metasploit Meterpreter Enabling/Disabling of Keyboard Detected"; flow:to_client,established; content:"stdapi_ui_enable_keyboard"; depth:60; reference:url,www.nologin.org/Downloads/Papers/meterpreter.pdf; reference:url,doc.emergingthreats.net/2009576; classtype:successful-user; sid:2009576; rev:2; metadata:affected_product Any, attack_target Client_and_Server, created_at 2010_07_30, deployment Perimeter, deployment Internet, deployment Internal, deployment Datacenter, signature_severity Critical, tag Metasploit, updated_at 2016_07_01;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET ATTACK_RESPONSE Metasploit Meterpreter Enabling/Disabling of Mouse Detected"; flow:to_client,established; content:"stdapi_ui_enable_mouse"; depth:60; reference:url,www.nologin.org/Downloads/Papers/meterpreter.pdf; reference:url,doc.emergingthreats.net/2009577; classtype:successful-user; sid:2009577; rev:2; metadata:affected_product Any, attack_target Client_and_Server, created_at 2010_07_30, deployment Perimeter, deployment Internet, deployment Internal, deployment Datacenter, signature_severity Critical, tag Metasploit, updated_at 2016_07_01;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET ATTACK_RESPONSE Metasploit Meterpreter File/Memory Interaction Detected"; flow:to_client,established; content:"stdapi_fs_file_expand_path"; depth:60; reference:url,www.nologin.org/Downloads/Papers/meterpreter.pdf; reference:url,doc.emergingthreats.net/2009578; classtype:successful-user; sid:2009578; rev:2; metadata:affected_product Any, attack_target Client_and_Server, created_at 2010_07_30, deployment Perimeter, deployment Internet, deployment Internal, deployment Datacenter, signature_severity Critical, tag Metasploit, updated_at 2016_07_01;)
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET ATTACK_RESPONSE Metasploit Meterpreter Registry Interation Detected"; flow:to_client,established; content:"stdapi_registry_create_key"; depth:60; reference:url,www.nologin.org/Downloads/Papers/meterpreter.pdf; reference:url,doc.emergingthreats.net/2009579; classtype:successful-user; sid:2009579; rev:2; metadata:affected_product Any, attack_target Client_and_Server, created_at 2010_07_30, deployment Perimeter, deployment Internet, deployment Internal, deployment Datacenter, signature_severity Critical, tag Metasploit, updated_at 2016_07_01;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET ATTACK_RESPONSE Metasploit Meterpreter File Upload Detected"; flow:to_client,established; content:"core_channel_write"; depth:50; reference:url,www.nologin.org/Downloads/Papers/meterpreter.pdf; reference:url,doc.emergingthreats.net/2009580; classtype:successful-user; sid:2009580; rev:2; metadata:affected_product Any, attack_target Client_and_Server, created_at 2010_07_30, deployment Perimeter, deployment Internet, deployment Internal, deployment Datacenter, signature_severity Critical, tag Metasploit, updated_at 2016_07_01;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET ATTACK_RESPONSE Metasploit Meterpreter Channel Interaction Detected, Likely Interaction With Executable"; flow:to_client,established; content:"core_channel_interact"; depth:60; reference:url,www.nologin.org/Downloads/Papers/meterpreter.pdf; reference:url,doc.emergingthreats.net/2009651; classtype:successful-user; sid:2009651; rev:3; metadata:affected_product Any, attack_target Client_and_Server, created_at 2010_07_30, deployment Perimeter, deployment Internet, deployment Internal, deployment Datacenter, signature_severity Critical, tag Metasploit, updated_at 2016_07_01;)
+
+#alert tcp $EXTERNAL_NET 1024:65535 -> $HOME_NET 1024:65535 (msg:"ET ATTACK_RESPONSE Metasploit/Meterpreter - Sending metsrv.dll to Compromised Host"; flow:established; content:"|40 00 41 00 42 0043 00 44 00 6d 65 74 73 72 76 2e 64 6c 6c 00 49 6e 69 74 00 5f 52 65 66 6c 65 63 74 69 76 65 4c 6f 61|"; reference:url,doc.emergingthreats.net/2010454; classtype:successful-admin; sid:2010454; rev:3; metadata:affected_product Any, attack_target Client_and_Server, created_at 2010_07_30, deployment Perimeter, deployment Internet, deployment Internal, deployment Datacenter, signature_severity Critical, tag Metasploit, updated_at 2016_07_01;)
+
+#alert tcp $HTTP_SERVERS $HTTP_PORTS -> $EXTERNAL_NET any (msg:"ET ATTACK_RESPONSE c99shell phpshell detected"; flow:establish                                       [7777777777##############'eeeed,from_server; content:"c99shell"; reference:url,www.rfxn.com/vdb.php; reference:url,doc.emergingthreats.net/bin/view/Main/2007652; classtype:web-application-activity; sid:2007652; rev:5; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+alert tcp $HOME_NET 139 -> $EXTERNAL_NET any (msg:"ET ATTACK_RESPONSE Weak Netbios Lanman Auth Challenge Detected"; flow:from_server; content:"|ff 53 4d 42|"; content:"|00 11 22 33 44 55 66 77 88|"; reference:url,doc.emergingthreats.net/bin/view/Main/2006417; classtype:policy-violation; sid:2006417; rev:8; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp any any -> any 53 (msg:"ET DOS DNS BIND 9 Dynamic Update DoS attempt"; byte_test:1,&,40,2; byte_te74 00 5f 52 65 66 6c 65 63 74 69 76 65 4c 6f 61|"; reference:url,doc.emergingthreats.net/2010454; classtype:successful-admin; sid:2010454; rev:3; metadata:affected_product Any, attack_target Client_and_Server, created_at 2010_07_30, deployment Perimeter, deployment Internet, deployment Internal, deployment Datacenter, signature_severity Critical, tag Metasploit, updated_at 2016_07_01;)
+
+#alert tcp $HTTP_SERVERS $HTTP_PORTS -> $EXTERNAL_NET any (msg:"ET ATTACK_RESPONSE c99shell phpshell detected"; flow:establish                                       [7777777777##############'eeeed,from_server; content:"c99shell"; reference:url,www.rfxn.com/vdb.php; reference:url,doc.emergingthreats.net/bin/view/Main/2007652; classtype:web-application-activity; sid:2007652; rev:5; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+alert tcp $HOME_NET 139 -> $EXTERNAL_NET any (msg:"ET ATTACK_RESPONSE Weak Netbios Lanman Auth Challenge Detected"; flow:from_server; content:"|ff 53 4d 42|"; content:"|00 11 22 33 44 55 66 77 88|"; reference:url,doc.emergingthreats.net/bin/view/Main/2006417; classtype:policy-violation; sid:2006417; rev:8; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp any any -> any 53 (msg:"ET DOS DNS BIND 9 Dynamic Update DoS attempt"; byte_test:1,&,40,2; byte_test:1,>,0,5; byte_test:1,>,0,1; content:"|00 00 06|"; offset:8; content:"|c0 0c 00 ff|"; distance:2; reference:cve,2009-0696; reference:url,doc.emergingthreats.net/2009701; classtype:attempted-dos; sid:2009701; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET 5060 (msg:"ET DOS Possible Cisco ASA 5500 Series Adaptive Security Appliance Remote SIP Inspection Device Reload Denial of Service Attempt"; flow:established,to_server; content:"REGISTER"; depth:8; nocase; isdataat:400,relative; pcre:"/REGISTER.{400}/smi"; reference:url,tools.cisco.com/security/center/viewAlert.x?alertId=19915; reference:cve,2010-0569; reference:url,doc.emergingthreats.net/2010817; classtype:attempted-dos; sid:2010817; rev:3; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp any 53 -> $DNS_SERVERS any (msg:"ET DNS Excessive DNS Responses with 1 or more RR's (100+ in 10 seconds) - possible Cache Poisoning Attempt"; byte_test:2,>,0,6; byte_test:2,>,0,10; threshold: type both, track by_src, count 100, seconds 10; reference:url,doc.emergingthreats.net/bin/view/Main/2008446; classtype:bad-unknown; sid:2008446; rev:9; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $SQL_SERVERS 1433 (msg:"ET SQL MSSQL sp_replwritetovarbin - potential memory overwrite case 1"; flow:to_server,established; content:"s|00|p|00|_|00|r|00|e|00|p|00|l|00|w|00|r|00|i|00|t|00|e|00|t|00|o|00|v|00|a|00|r|00|b|00|i|00|n"; nocase; reference:url,archives.neohapsis.com/archives/fulldisclosure/2008-12/0239.html; reference:url,doc.emergingthreats.net/bin/view/Main/2008909; classtype:attempted-user; sid:2008909; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $SQL_SERVERS 1433 (msg:"ET DELETED MSSQL sp_replwritetovarbin - potential memory overwrite case 2"; flow:to_server,established; content:"sp_replwritetovarbin"; nocase; reference:url,archives.neohapsis.com/archives/fulldisclosure/2008-12/0239.html; reference:url,doc.emergingthreats.net/bin/view/Main/2008910; classtype:attempted-user; sid:2008910; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET 445 (msg:"ET NETBIOS Remote SMB2.0 DoS Exploit"; flow:to_server,established; content:"|ff|SMB|72 00 00 00 00 18 53 c8|"; offset:4; content:!"|00 00|"; within:2; reference:url,securityreason.com/exploitalert/7138; reference:url,doc.emergingthreats.net/2009886; classtype:attempted-dos; sid:2009886; rev:4; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"ET MALWARE Psyb0t joining an IRC Channel"; flow:established,to_server; flowbits:isset,is_proto_irc; content:"JOIN #mipsel"; reference:url,www.adam.com.au/bogaurd/PSYB0T.pdf; reference:url,doc.emergingthreats.net/2009172; classtype:trojan-activity; sid:2009172; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $HOME_NET any -> $EXTERNAL_NET 25 (msg:"ET HUNTING Suspicious SMTP handshake outbound"; flow:established,to_server; content:"001 RUTHERE"; depth:11; reference:url,doc.emergingthreats.net/bin/view/Main/2008562; classtype:unknown; sid:2008562; rev:3; metadata:created_at 2010_07_30, former_category MALWARE, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET 25 -> $HOME_NET any (msg:"ET HUNTING Suspicious SMTP handshake reply"; flow:established,from_server; content:"701 IMHERE"; depth:10; reference:url,doc.emergingthreats.net/bin/view/Main/2008563; classtype:unknown; sid:2008563; rev:3; metadata:created_at 2010_07_30, former_category MALWARE, updated_at 2010_07_30;)
+
+#alert tcp $HOME_NET any -> $EXTERNAL_NET 1024: (msg:"ET DELETED Unknown Keepalive out"; flow:established,to_server; dsize:5; content:"|17 24 1B 00 00|"; flowbits:isnotset,ET.teamviewerkeepaliveout; flowbits:set,ET.unknownkeepaliveup; flowbits:noalert; reference:url,doc.emergingthreats.net/bin/view/Main/2008779; classtype:unknown; sid:2008779; rev:4;Ímetadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET 1024: -> $HOME_NET any (msg:"ET DELETED Unknown Keepalive in"; flow:established,to_client; dsize:5; content:"|17 24 1B 00 00|"; flowbits:isnotset,ET.teamviewerkeepaliveout; flowbits:isset,ET.unknownkeepaliveup; reference:url,doc.emergingthreats.net/bin/view/Main/2008780; classtype:unknown; sid:2008780; rev:4; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET 23 (msg:"ET DOS Catalyst memory leak attack"; flow: to_server,established; content:"|41 41 41 0a|"; depth: 20; reference:url,www.cisco.com/en/US/products/products_security_advisory09186a00800b138e.shtml; reference:url,doc.emergingthreats.net/bin/view/Main/2000011; classtype:attempted-dos; sid:2000011; rev:8; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp $EXTERNAL_NET any -> $HOME_NET 162 (msg:"ET SNMP Cisco Non-Trap PDU request on SNMPv1 trap port"; content:"|02 01 00|"; depth:3; byte_test:1,>,159,8,relative; byte_test:1,<,164,8,relative; reference:cve,2004-0714; reference:bugtraq,10186; reference:url,doc.emergingthreats.net/bin/view/Main/2002880; classtype:attempted-dos; sid:2002880; rev:8; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp $EXTERNAL_NET any -> $HOME_NET 162 (msg:"ET SNMP Cisco Non-Trap PDU request on SNMPv2 trap port"; content:"|02 01|"; depth:2; byte_test:1,>,0,0,relative; byte_test:1,<,3,0,relative; byte_test:1,>,159,9,relative; byte_test:1,<,167,9,relative; reference:cve,2004-0714; reference:bugtraq,10186; reference:url,doc.emergingthreats.net/bin/view/Main/2002881; classtype:attempted-dos; sid:2002881; rev:8; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp $EXTERNAL_NET any -> $HOME_NET 162 (msg:"ET SNMP Cisco Non-Trap PDU request on SNMPv3 trap port"; content:"|02 01 03|"; depth:3; byte_test:1,>,159,43,relative; byte_test:1,<,167,43,relative; reference:cve,2004-0714; reference:bugtraq,10186; reference:url,doc.emergingthreats.net/bin/view/Main/2002882; classtype:attempted-dos; sid:2002882; rev:7; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp $EXTERNAL_NET !161 -> $HOME_NET 49152: (msg:"ET SNMP Cisco Non-Trap PD- request on SNMPv1 random port"; content:"|02 01 00|"; depth:3; byte_test:1,>,159,8,relative; byte_test:1,<,164,8,relative; reference:cve,2004-0714; reference:bugtraq,10186; reference:url,doc.emergingthreats.net/bin/view/Main/2002926; classtype:attempted-dos; sid:2002926; rev:7; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp $EXTERNAL_NET !161 -> $HOME_NET 49152: (msg:"ET SNMP Cisco Non-Trap PDU request on SNMPv2 random port"; content:"|02 01|"; depth:2; byte_test:1,>,0,0,relative; byte_test:1,<,3,0,relative; byte_test:1,>,159,9,relative; byte_test:1,<,167,9,relative; reference:cve,2004-0714; reference:bugtraq,10186; reference:url,doc.emergingthreats.net/bin/view/Main/2002927; classtype:attempted-dos; sid:2002927; rev:7; metadata:created_at 2010_07_30, up               dated_at 2010_07_30;)
+
+#alert udp $EXTERNAL_NET !161 -> $HOME_NET 49152: (msg:"ET SNMP Cisco Non-Trap PDU request on SNMPv3 random port"; content:"|02 01 03|"; depth:3; byte_test:1,>,159,43,relative; byte_test:1,<,167,43,relative; reference:cve,2004-0714; reference:bugtraq,10186; reference:url,doc.emergingthreats.net/bin/view/Main/2002928; classtype:attempted-dos; sid:2002928; rev:7; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET 1755 (msg:"ET DOS Microsoft Streaming Server Malformed Request"; flow:established,to_server; content:"MSB "; depth:4; content:"|06 01 07 00 24 00 00 40 00 00 00 00 00 00 01 00 00 00|"; distance:0; within:18; reference:bugtraq,1282; reference:url,www.microsoft.com/technet/security/bulletin/ms00-038.mspx; reference:url,doc.emergingthreats.net/bin/view/Main/2002843; classtype:attempted-dos; sid:2002843; rev:4; metadata:created_at 2010_07_30, updated_at 2020_08_20;)
+
+#alert tcp $EXTERNAL_NET any -> $SMTP_SERVERS 25 (msg:"ET DOS Excessive SMTP MAIL-FROM DDoS"; flow: to_server, established; content:"MAIL FROM|3a|"; nocase; window: 0; id:0; threshold: type limit, track by_src, count 30, seconds 60; reference:url,doc.emergingthreats.net/bin/view/Main/2001795; classtype:denial-of-service; sid:2001795; rev:9; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET 25 (msg:"ET DELETED HELO Non-Displayable Characters MailEnable Denial of Service"; flow:established,to_server; content:"HELO "; nocase; depth:60; pcre:"/^[^\n]*[\x00-\x08\x0e-\x1f]/R"; reference:cve,2006-3277; reference:bugtraq,18630; reference:url,doc.emergingthreats.net/bin/view/Main/2002998; classtype:attempted-dos; sid:2002998; rev:7; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET 3306 (msg:"ET DOS Possible MYSQL GeomFromWKB() function Denial Of Service Attempt"; flow:to_server,established; content:"SELECT"; nocase; content:"geometrycollectionfromwkb"; distance:0; nocase; pcre:"/SELECT.+geometrycollectionfromwkb/si"; reference:url,www.securityfocus.com/bid/37297/info; reference:url,marc.info/?l=oss-security&m=125881733826437&w=2; reference:url,downloads.securityfocus.com/vulnerabilities/exploits/37297.txt; reference:cve,2009-4019; reference:url,doc.emergingthreats.net/2010491; classtype:attempted-dos; sid:2010491; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET 3306 (msg:"ET DOS Possible MYSQL SELECT WHERE to User Variable Denial Of Service Attempt"; flow:to_server,established; content:"SELECT"; nocase; content:"WHERE"; distance:0; nocase; content:"SELECT"; nocase; content:"INTO"; distance:0; nocase; content:"|60|"; within:50; content:"|60|"; pcre:"/SELECT.+WHERE.+SELECT.+\x60/si"; reference:url,www.securityfocus.com/bid/37297/info; reference:url,marc.info/?l=oss-security&m=125881733826437&w=2; reference:url,downloads.securityfocus.com/vulnerabilities/exploits/37297-2.txt; reference:cve,2009-4019; reference:url,doc.emergingthreats.net/2010492; classtype:attempted-dos; sid:2010492; rev:3; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET 3306 (msg:"ET DOS Possible MySQL ALTER DATABASE Denial Of Service Attempt"; flow:established,to_server; content:"ALTER "; nocase; content:"DATABASE"; nocase; within:12; content:"|22|."; distance:0; content:"UPGRADE "; nocase; distance:0; content:"DATA"; nocase; within:8; pcre:"/ALTER.+DATABASE.+\x22\x2E(\x22|\x2E\x22|\x2E\x2E\x2F\x22).+UPGRADE.+DATA/si"; reference:url,securitytracker.com/alerts/2010/Jun/1024160.html; reference:url,dev.mysql.com/doc/refman/5.1/en/alter-database.html; reference:cve,2010-2008; reference:url,doc.emergingthreats.net/2011761; classtype:attempted-dos; sid:2011761; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert udp $EXTERNAL_NET 123 -> $HOME_NET 123 (msg:"ET DOS Potential Inbound visories/ZDI-10-129/; reference:url,www.novell.com/support/php/search.do?cmd=displayKC&docType=kc&externalId=7006374&sliceId=2&docTypeID=DT_TID_1_1&dialogID=155271264&stateId=0 0 155267598; reference:url,doc.emergingthreats.net/2011235; classtype:attempted-admin; sid:2011235; rev:2; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $SQL_SERVERS $ORACLE_PORTS (msg:"ET EXPLOIT SYS get_domain_index_metadata Privilege Escalation Attempt"; flow:established,to_server; content:"ODCIIndexMetadata"; nocase; content:"sys.dbms_export_extension.get_domain_index_metadata"; nocase; reference:bugtraq:set,BE.ftp.message; reference:url,www.milw0rm.com/exploits/2856; reference:url,doc.emergingth   reats.net/bin/view/Main/2003196; classtype:misc-attack; sid:2003196; rev:7; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+#alert tcp $EXTERNAL_NET any -> $HOME_NET 21 (msg:"ET EXPLOIT ProFTPD .message file overflow attempt"; flowbits:isset,BE.ftp.message; flow:to_server,established; cont%nt:"CWD "; depth:4; nocase; flowbits:unset,BE.ftp.message; reference:url,www.milw0rm.com/exploits/2856; referenc

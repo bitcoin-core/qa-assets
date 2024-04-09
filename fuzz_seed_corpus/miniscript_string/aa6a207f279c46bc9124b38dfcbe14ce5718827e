@@ -1,0 +1,1 @@
+thresh(1,and_b(thresh(1,1),0),thresh(3,and_b(1,0),0,and_b(thresh(1,1),0),and_b(thresh(1,1),0),0,0),and_b(1,0),and_b(1,0),1))
