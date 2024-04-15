@@ -1,0 +1,156 @@
+# Title: StevenBlack/hosts
+#
+# This hosts file is a merged collection of hosts from reputable sources,
+# with a dash of crowd sourcing via GitHub
+#
+# Date: 06 August 2023 00:26:10 (UTC)
+# Number of unique domains: 207,329
+#
+# Fetch the latest version of this file: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+# Project home page: https://github.com/StevenBlack/hosts
+# Project releases: https://github.com/StevenBlack/hosts/releases
+#
+# ===============================================================
+
+127.0.0.1 localhost
+127.0.0.1 localhost.localdomain
+127.0.0.1 local
+255.255.255.255 broadcasthost
+::1 localhost
+::1 ip6-localhost
+::1 ip6-loopback
+fe80::1%lo0 localhost
+ff00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+0.0.0.0 0.0.0.0
+
+# Custom host records are listed here.
+
+
+# End of custom host records.
+# Start StevenBlack
+
+#=====================================
+# Title: Hosts contributed by Steven Black
+# http://stevenblack.com
+
+0.0.0.0 ck.getcookiestxt.com
+0.0.0.0 eu1.clevertap-prod.com
+0.0.0.0 wizhumpgyros.com
+0.0.0.0 coccyxwickimp.com
+0.0.0.0 webmail-who-int.000webhostapp.com
+0.0.0.0 010sec.com
+0.0.0.0 01mspmd5yalky8.com
+0.0.0.0 0byv9mgbn0.com
+0.0.0.0 ns6.0pendns.org
+0.0.0.0 dns.0pengl.com
+0.0.0.0 12724.xyz
+0.0.0.0 21736.xyz
+0.0.0.0 www.analytics.247sports.com
+0.0.0.0 2no.co
+0.0.0.0 www.2no.co
+0.0.0.0 logitechlogitechglobal.112.2o7.net
+0.0.0.0 www.logitechlogitechglobal.112.2o7.net
+0.0.0.0 2s11.com
+0.0.0.0 30-day-change.com
+0.0.0.0 www.30-day-change.com
+0.0.0.0 mclean.f.360.cn
+0.0.0.0 mvconf.f.360.cn
+0.0.0.0 care.help.360.cn
+0.0.0.0 eul.s.360.cn
+0.0.0.0 g.s.360.cn
+0.0.0.0 p.s.360.cn
+0.0.0.0 aicleaner.shouji.360.cn
+0.0.0.0 ssl.360antivirus.org
+0.0.0.0 ad.360in.com
+0.0.0.0 mclean.lato.cloud.360safe.com
+0.0.0.0 mvconf.lato.cloud.360safe.com
+0.0.0.0 mclean.cloud.360safe.com
+0.0.0.0 mvconf.cloud.360safe.com
+0.0.0.0 mclean.uk.cloud.360safe.com
+0.0.0.0 mvconf.uk.cloud.360safe.com
+0.0.0.0 3lift.org
+0.0.0.0 448ff4fcfcd199a.com
+0.0.0.0 44chan.me
+0.0.0.0 4ourkidsky.com
+0.0.0.0 5kv261gjmq04c9.com
+0.0.0.0 88chan.pw
+0.0.0.0 new.915yzt.cn
+0.0.0.0 tempinfo.96.lt
+0.0.0.0 abdurantom.com
+0.0.0.0 abtasty.net
+0.0.0.0 analytics.modul.ac.at
+0.0.0.0 acalvet.com
+0.0.0.0 acbras.com
+0.0.0.0 graph.accountkit.com
+0.0.0.0 www.graph.accountkit.com
+0.0.0.0 go.ad1data.com
+0.0.0.0 metrics.adage.com
+0.0.0.0 adaptivecss.org
+0.0.0.0 ads30.adcolony.com
+0.0.0.0 androidads23.adcolony.com
+0.0.0.0 events3.adcolony.com
+0.0.0.0 events3alt.adcolony.com
+0.0.0.0 sdk.adincube.com
+0.0.0.0 app.adjust.com
+0.0.0.0 cdn.admitad-connect.com
+0.0.0.0 macro.adnami.io
+0.0.0.0 acdn.adnxs.com
+0.0.0.0 prebid.adnxs.com
+0.0.0.0 www.prebid.adnxs.com
+0.0.0.0 sstats.adobe.com
+0.0.0.0 adorebeauty.org
+0.0.0.0 feedback.adrecover.com
+0.0.0.0 adroitpmps.com
+0.0.0.0 www.ads2live.com
+0.0.0.0 adsflame.com
+0.0.0.0 backend-ssp.adstudio.cloud
+0.0.0.0 adtekmedia.com
+0.0.0.0 400.route.to.adtracker.network
+0.0.0.0 track.adtrue.com
+0.0.0.0 dw.adyboh.com
+0.0.0.0 wy.adyboh.com
+0.0.0.0 adzerk.com
+0.0.0.0 www.adzerk.com
+0.0.0.0 ark.aeriagames.us
+0.0.0.0 ahf4ycvea439tt9rq.site
+0.0.0.0 aiisa.am
+0.0.0.0 aircovid19virus.com
+0.0.0.0 akashdayalgroups.com
+0.0.0.0 www.akashdayalgroups.com
+0.0.0.0 akibaol.com
+0.0.0.0 alidnx.com
+0.0.0.0 alliance4media.com
+0.0.0.0 www.alliance4media.com
+0.0.0.0 allmygoodlife.com
+0.0.0.0 acrdb.alphonso.tv
+0.0.0.0 ads.alphonso.tv
+0.0.0.0 api.alphonso.tv
+0.0.0.0 assets.alphonso.tv
+0.0.0.0 bwlkup.alphonso.tv
+0.0.0.0 clockskew.alphonso.tv
+0.0.0.0 degea.alphonso.tv
+0.0.0.0 demo.alphonso.tv
+0.0.0.0 dimaria.alphonso.tv
+0.0.0.0 insights.alphonso.tv
+0.0.0.0 koudas.alphonso.tv
+0.0.0.0 neymar.alphonso.tv
+0.0.0.0 optout.alphonso.tv
+0.0.0.0 ppjs.alphonso.tv
+0.0.0.0 prov.alphonso.tv
+0.0.0.0 proxy.alphonso.tv
+0.0.0.0 rtbdev4.alphonso.tv
+0.0.0.0 tn.alphonso.tv
+0.0.0.0 tr.alphonso.tv
+0.0.0.0 tvads.alphonso.tv
+0.0.0.0 villa.alphonso.tv
+0.0.0.0 web2.alphonso.tv
+0.0.0.0 www.alphonso.tv
+0.0.0.0 alpinehandlingsystems.com
+0.0.0.0 creative.alxbgo.com
+0.0.0.0 amarktflow.com
+0.0.0.0 www.amarktflow.com
+0.0.0.0 device-metrics-us.amaz
