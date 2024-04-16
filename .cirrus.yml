@@ -25,6 +25,7 @@ task:
       - cd ./contrib/touched-files-check
       - cargo build
       - mv ./target/debug/touched-files-check ./../../out-dir/
+  fuzz_inputs_total_size_script: du -sh ./fuzz_seed_corpus/
   lint_script: ./out-dir/touched-files-check "HEAD~..HEAD"
 task:
   name: "[native_fuzz_with_valgrind]  [persistent_worker]"
