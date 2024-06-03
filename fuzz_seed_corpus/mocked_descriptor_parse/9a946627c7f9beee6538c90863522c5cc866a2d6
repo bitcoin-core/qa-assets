@@ -1,0 +1,1 @@
+tr(%23/3,thresh(5,0,0,andor(ripemd160(3b3239b0573cec20b3ebcde971574c69675365a8),ripemd160(3b3239b0573cec20b3ebcde971574c69675365a8),ripemd160(01b5ab36cb024c433beed66bee022f63af5df20a)),0,0,1,0,0,1,0,1,1,0,1),1,0,0,1,0,0,1,0,1,1,ooooooooooh,0,0,0,1,0,0,0pk(%53/22))
