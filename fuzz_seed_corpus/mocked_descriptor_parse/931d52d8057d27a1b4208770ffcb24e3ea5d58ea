@@ -1,0 +1,1 @@
+wsh(nn:thresh(1,0,0,or_i(pk(%04),pk(%33)),0,or_i(1,or_i(pk(%70),pk(%36)))))
