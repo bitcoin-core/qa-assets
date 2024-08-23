@@ -33,7 +33,7 @@ def main():
     for target in existing_targets:
         print(f'{BOLD[1]}Downloading for target "{target}" ...{BOLD[0]}')
         url = f"https://storage.googleapis.com/bitcoin-core-backup.clusterfuzz-external.appspot.com/corpus/libFuzzer/bitcoin-core_{target}/{ZIP_NAME}"
-        if 0 != subprocess.call(["wget", url]):
+        if 0 != subprocess.call(["curl", "--fail", "--location", "--remote-name", "--retry", "3", url]):
             print(f'{BOLD[1]}... Skipping target "{target}"{BOLD[0]}')
             continue
         subprocess.check_call(["unzip", "-n", "-q", ZIP_NAME, "-d", target])
