@@ -1,1 +1,0 @@
-thresh(31,thresh(4,1,thresh(1,1,a:0),thresh(1,l:1,n:0),0,0,0,0,0,0,0,0,0,0,0,thresh(1,thresh(1,l:1,0),thresh(1,l:0),0,0,0,0,l:1),0,0,0,0,0,1))

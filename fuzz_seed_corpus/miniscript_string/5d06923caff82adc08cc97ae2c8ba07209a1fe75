@@ -1,1 +1,0 @@
-or_d(d:1,thresh(3,or_d(or_d(l:1,u:1),or_d(or_d(1,u:1),l:1)),or_d(or_d(l:0,1),or_d(or_c(l:1,u:1),l:1)),or_d(or_d(v:1,u:1),or_d(or_d(1,u:1),l:1)),or_d(or_d(l:1,u:1),u:or_d(or_d(l:1,u:0),l:1)),1))a
