@@ -25,7 +25,7 @@ task:
       - cd ./contrib/touched-files-check
       - cargo build
       - mv ./target/debug/touched-files-check ./../../out-dir/
-  fuzz_inputs_total_size_script: du -sh ./fuzz_seed_corpus/
+  fuzz_inputs_total_size_script: du -sh ./fuzz_corpora/
   lint_script: ./out-dir/touched-files-check "HEAD~..HEAD"
 task:
   name: "[native_fuzz_with_valgrind]  [persistent_worker]"
@@ -44,7 +44,7 @@ task:
     - apt update && apt install git -y
     - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
     - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
-    - mv ./{.git,fuzz_seed_corpus} ./bitcoin-core/ci/scratch/qa-assets/
+    - mv ./{.git,fuzz_corpora} ./bitcoin-core/ci/scratch/qa-assets/
   ci_script:
     - cd ./bitcoin-core
     - ./ci/test_run_all.sh
@@ -65,7 +65,7 @@ task:
     - apt update && apt install git -y
     - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
     - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
-    - mv ./{.git,fuzz_seed_corpus} ./bitcoin-core/ci/scratch/qa-assets/
+    - mv ./{.git,fuzz_corpora} ./bitcoin-core/ci/scratch/qa-assets/
   ci_script:
     - cd ./bitcoin-core
     - ./ci/test_run_all.sh
@@ -87,7 +87,7 @@ task:
     - apt update && apt install git -y
     - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
     - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
-    - mv ./{.git,fuzz_seed_corpus} ./bitcoin-core/ci/scratch/qa-assets/
+    - mv ./{.git,fuzz_corpora} ./bitcoin-core/ci/scratch/qa-assets/
   ci_script:
     - cd ./bitcoin-core
     - ./ci/test_run_all.sh

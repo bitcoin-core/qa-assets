@@ -4,7 +4,7 @@ Bitcoin Core related blobs used for quality assurance.
 
 ## Fuzz inputs
 
-`qa-assets/fuzz_seed_corpus` contains one input corpus per fuzz target (one
+`qa-assets/fuzz_corpora` contains one input corpus per fuzz target (one
 folder per target named the same as each target).
 
 ### Contributing inputs

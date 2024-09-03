@@ -6,16 +6,16 @@ fn check(touched_files: &str) -> Result<(), String> {
             (l.next().unwrap(), l.next().unwrap())
         };
         println!("Touched file: {status} {file}");
-        let fuzz_seed_corpora_dir = "fuzz_seed_corpus/";
+        let fuzz_corpora_dir = "fuzz_corpora/";
         if only_inputs.is_none() {
-            only_inputs = Some(file.starts_with(fuzz_seed_corpora_dir));
+            only_inputs = Some(file.starts_with(fuzz_corpora_dir));
         }
-        if only_inputs.unwrap() != file.starts_with(fuzz_seed_corpora_dir) {
+        if only_inputs.unwrap() != file.starts_with(fuzz_corpora_dir) {
             return Err(format!(
-                "All files in this pull request should either be fuzz inputs in the directory {fuzz_seed_corpora_dir} or only files outside that dir."
+                "All files in this pull request should either be fuzz inputs in the directory {fuzz_corpora_dir} or only files outside that dir."
             ));
         }
-        if file.starts_with(fuzz_seed_corpora_dir) && status != "A" {
+        if file.starts_with(fuzz_corpora_dir) && status != "A" {
             return Err(format!(
                 "File status for fuzz input is not 'A' (for add): '{status}' '{file}'"
             ));
@@ -41,15 +41,15 @@ fn main() {
 fn test_check() {
     assert_eq!(check("M README.md"), Ok(()));
     assert_eq!(
-        check("B fuzz_seed_corpus/foo/bar").unwrap_err(),
-        "File status for fuzz input is not 'A' (for add): 'B' 'fuzz_seed_corpus/foo/bar'",
+        check("B fuzz_corpora/foo/bar").unwrap_err(),
+        "File status for fuzz input is not 'A' (for add): 'B' 'fuzz_corpora/foo/bar'",
     );
     assert_eq!(
-        check("A fuzz_seed_corpus/foo/bar1\nA fuzz_seed_corpus/foo/bar2"),
+        check("A fuzz_corpora/foo/bar1\nA fuzz_corpora/foo/bar2"),
         Ok(()),
     );
     assert_eq!(
-        check("M README.md\nA fuzz_seed_corpus/foo/bar3").unwrap_err(),
-        "All files in this pull request should either be fuzz inputs in the directory fuzz_seed_corpus/ or only files outside that dir.",
+        check("M README.md\nA fuzz_corpora/foo/bar3").unwrap_err(),
+        "All files in this pull request should either be fuzz inputs in the directory fuzz_corpora/ or only files outside that dir.",
     );
 }
