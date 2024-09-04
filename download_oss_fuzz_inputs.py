@@ -5,7 +5,7 @@ import os
 import subprocess
 
 
-FUZZ_INPUTS_DIR = "fuzz_seed_corpus"
+FUZZ_INPUTS_DIR = "fuzz_corpora"
 ZIP_NAME = "public.zip"
 BOLD = ("\033[0m", "\033[1m")
 
