@@ -1,0 +1,1 @@
+tr(%2d,or_i(pk(%50),or_i(pkh(%47),or_i(pkh(%10),pk(%22)))))
