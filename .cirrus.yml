@@ -75,7 +75,7 @@ task:
     labels:
       type: medium  # Replicate config;
   # Use the same type as the one used for native_fuzz in https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
-  timeout_in: 120m  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
+  timeout_in: 240m  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
   env:
     FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
     MAKEJOBS: "-j10"
