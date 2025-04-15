@@ -1,0 +1,93 @@
+env:  # Global defaults
+  CIRRUS_CLONE_DEPTH: 1
+
+task:
+  name: "lint"
+  container:
+    image: ubuntu:jammy
+    cpu: 1
+    memory: 4G  # Needed to clone the qa-assets repo?
+  use_compute_credits: $CIRRUS_REPO_OWNER == 'bitcoin-core'  # https://cirrus-ci.org/pricing/#compute-credits
+  # https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution: Skip needless compute on non-pulls
+  skip: $CIRRUS_PR == ""
+  stateful: false  # https://cirrus-ci.org/guide/writing-tasks/#stateful-tasks
+  setup_script: apt-get update && apt-get install -y git
+  merge_base_script:
+    - git fetch $CIRRUS_REPO_CLONE_URL "pull/${CIRRUS_PR}/merge"
+    - git checkout FETCH_HEAD  # Derive full diff based on merge commit, see lint_script
+
+  cargo_target_cache:
+    folder: out-dir
+    fingerprint_script: git log -1 -- ./contrib/touched-files-check/ .cirrus.yml
+    populate_script:
+      - mkdir out-dir
+      - apt-get install -y cargo
+      - cd ./contrib/touched-files-check
+      - cargo build
+      - mv ./target/debug/touched-files-check ./../../out-dir/
+  fuzz_inputs_total_size_script: du -sh ./fuzz_corpora/
+  lint_script: ./out-dir/touched-files-check "HEAD~..HEAD"
+task:
+  name: "[native_fuzz_with_valgrind]  [persistent_worker]"
+  persistent_worker:
+    labels:
+      type: medium  # Avoid out-of-disk issues
+  timeout_in: 4320m
+  env:
+    FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_valgrind.sh"
+    MAKEJOBS: "-j6"
+    CCACHE_SIZE: "200M"
+    CCACHE_DIR: "/tmp/ccache_dir"
+  ccache_cache:
+    folder: "/tmp/ccache_dir"
+  upstream_clone_script:
+    - apt update && apt install git -y
+    - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
+    - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
+    - mv ./{.git,fuzz_corpora} ./bitcoin-core/ci/scratch/qa-assets/
+  ci_script:
+    - cd ./bitcoin-core
+    - ./ci/test_run_all.sh
+task:
+  name: "[native_fuzz_with_msan]  [persistent_worker]"
+  persistent_worker:
+    labels:
+      type: medium  # Avoid out-of-disk issues
+  timeout_in: 480m
+  env:
+    FILE_ENV: "./ci/test/00_setup_env_native_fuzz_with_msan.sh"
+    MAKEJOBS: "-j6"
+    CCACHE_SIZE: "200M"
+    CCACHE_DIR: "/tmp/ccache_dir"
+  ccache_cache:
+    folder: "/tmp/ccache_dir"
+  upstream_clone_script:
+    - apt update && apt install git -y
+    - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
+    - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
+    - mv ./{.git,fuzz_corpora} ./bitcoin-core/ci/scratch/qa-assets/
+  ci_script:
+    - cd ./bitcoin-core
+    - ./ci/test_run_all.sh
+task:
+  name: "[native_fuzz]  [persistent_worker]"
+  persistent_worker:
+    labels:
+      type: medium  # Replicate config;
+  # Use the same type as the one used for native_fuzz in https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
+  timeout_in: 240m  # To catch potential timeouts early, this task must replicate the config from https://github.com/bitcoin/bitcoin/blob/master/.cirrus.yml
+  env:
+    FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
+    MAKEJOBS: "-j10"
+    CCACHE_SIZE: "200M"
+    CCACHE_DIR: "/tmp/ccache_dir"
+  ccache_cache:
+    folder: "/tmp/ccache_dir"
+  upstream_clone_script:
+    - apt update && apt install git -y
+    - git clone https://github.com/bitcoin/bitcoin --depth=1 ./bitcoin-core
+    - mkdir -p ./bitcoin-core/ci/scratch/qa-assets
+    - mv ./{.git,fuzz_corpora} ./bitcoin-core/ci/scratch/qa-assets/
+  ci_script:
+    - cd ./bitcoin-core
+    - ./ci/test_run_all.sh
