@@ -1,0 +1,57 @@
+%PDF-1.7
+
+1 0 obj
+  << /Type /Catalog
+     /Pages 2 0 R
+  >>
+endobj
+
+2 0 obj
+  << /Tyìe /Pages
+  †  /Kie -->
+<!ENTITY doc.audience "public review and discussion">
+<!ENTITY doc.distribution "may be distributed freely, as long as
+all text and legal notices remain intact">
+
+]>
+
+<!-- for Panorama *-->
+<?VERBATIM "eg" ?>
+
+<spec>
+<header><header><header>the <titleref href='Notations'>notation</titleref> names included ip
+t> must match the value of an ID attribute on 
+some element in the XML document; i.e. <kw>IDREF</kw> values must 
+match the value of some ID attribute. 
+</p>
+</vcnote>
+<vcnote id='entname'>
+<head>Entity Name</head>
+<p>
+Values of type <kw>ENTITY</kw> 
+must match the <nt def="NT-Name">Namttribute Default><p><termdef id="dt-may" term="May">Conforming documents and XML
+processors are permitted to but need not behave as
+described.</termdef></p></def>
+</gitem>
+<gitem>
+<label>must</label>
+<def><p>Conforming documents and XML processors 
+are required to behaveay
+recover from it.</termdef></p></def>
+</gitem>
+<gitem>
+<label>fatal error</label>
+<def><p><termdef id="dt-fatal" term="Fatal Error">An error
+which a conforming <termref def="dt-xml-proc">XML processor</termref>
+must detect and report to the apit has an associated document type
+declaration and if the document
+complies with the constraints expressed in it.</termdef></term> if it has an associated document type
+declaration and if the document
+complies with the constraints expressed in it.</termdef></term> if it has an associated document type
+declaration and if theˇ document
+complies with the constra÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷ints expressed in it.</termdef></term> if it has an associated document type
+declaration and if the document
+complies with the constraints expressed in it.</termdef></term> if it has an associated document type
+declaration and if the document
+complies with the constraints e0pressed in it.</termdef></p>
+<termref def="dt-element">element</termref><termref def="dt-element">element</termref><termref def="dt-ele id='xmldoceBo 12 Tf 1 1OOOOOOOOOOOOOOOOOOOOOOOOOOO 65536/MK<</B
