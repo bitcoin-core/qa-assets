@@ -1,1 +1,0 @@
-wsh(and_v(or_c(u:1,v:1),or_c(ut:and_v(or_c(u:1,v:1),v:1),or_c(and_v(or_c(u:1,v:1),v:1),1))))

@@ -1,1 +1,0 @@
-thresh(1,thresh(1,thresh(1,0,thresh(1,ll:0)),thresh(1,ll:0,a:0)),thresh(1,thresh(1,thresh(1,thresh(1,l:1,a:1)),thresh(1,ll:0,a:0)),thresh(1,thresh(1,thresh(1,thresh(1,l:1)),thresh(1,ll:1,a:0,u:1)),thresh(1,thresh(1,thresh(1,l:0,au:1)),0,l:0,au:1)),thresh(1,thresh(1,thresh(1,l:0,thresh(1,l:1,a:1)),thresh(1,ll:0,a:0)),0)))
