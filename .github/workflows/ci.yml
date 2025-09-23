@@ -63,7 +63,7 @@ jobs:
       - name: Configure Docker
         uses: bitcoin/bitcoin/.github/actions/configure-docker@master
         with:
-          use-cirrus: false
+          cache-provider: 'gha'
 
       - name: CI script
         run: |
