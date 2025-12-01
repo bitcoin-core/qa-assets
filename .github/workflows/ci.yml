@@ -53,6 +53,9 @@ jobs:
           path: qa-assets
           fetch-depth: 1
 
+      - name: Clear unnecessary files on bloated GHA VM
+        uses: bitcoin/bitcoin/.github/actions/clear-files@master
+
       - name: Configure environment
         uses: bitcoin/bitcoin/.github/actions/configure-environment@master
 
