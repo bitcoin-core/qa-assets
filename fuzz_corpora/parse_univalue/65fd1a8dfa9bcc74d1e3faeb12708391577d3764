@@ -1,0 +1,1 @@
+"wsh(thresh(1,thresh(1,0,a:or_i(1,or_i(1,or_i(1,or_i(1,or_i(1,0)))))),a:or_i(1,thresh(1,0,a:or_i(1,or_i(1,0)))),thresh(1,0,a:or_i(1,or_i(1,or_i(1,or_i(1,or_i(1,0)))))),a:or_i(1,thresh(1,0,a:or_i(1,or_i(1,0)))),0)"
