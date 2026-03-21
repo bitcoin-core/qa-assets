@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Over time the fuzz engine will reduce inputs (produce a smaller input that
 # yields the same coverage statistics). With a growing set of inputs, it could
 # be useful to occasionally delete the "old" non-reduced inputs.
@@ -39,29 +40,49 @@ git clone --depth=1 https://github.com/bitcoin-core/qa-assets.git
   git commit -a -m "Delete fuzz inputs"
 )
 
-git clone --depth=1 https://github.com/bitcoin/bitcoin.git
+# TODO: optimize? --no-single-branch increased size from 69M to 170M
+# could use ls-remote to list tags and then only fetch tags we need
+git clone --depth=1 --no-single-branch https://github.com/bitcoin/bitcoin.git
 (
   cd bitcoin
 
-  echo "Adding reduced seeds with afl-cmin"
+  # A fuzz input will be kept if it increases coverage on master or any of the
+  # last three major versions.
+  REFS=("master")
+  CURRENT_MAJOR_VERSION=$(git tag --list 'v*' --sort=-v:refname | sed 's/^v//' | awk -F. '{ print $1 }' | head -1)
+  PREV_MAJOR_VERSIONS="$((CURRENT_MAJOR_VERSION - 1)) $((CURRENT_MAJOR_VERSION - 2))"
+  for version in $PREV_MAJOR_VERSIONS; do
+    # get latest minor version of each major version
+    REFS+=($(git tag --list "v$version*" --sort=-v:refname | head -1))
+  done
 
-  rm -rf build_fuzz/
   export LDFLAGS="-fuse-ld=lld"
-  cmake -B build_fuzz \
-    -DCMAKE_C_COMPILER=afl-clang-fast -DCMAKE_CXX_COMPILER=afl-clang-fast++ \
-    -DBUILD_FOR_FUZZING=ON
-  cmake --build build_fuzz -j$(nproc)
+  for ref in ${REFS[@]}; do
+    ref_sha1=$(git rev-parse --short "$ref")
+    echo "Adding reduced seeds with afl-cmin on $ref ($ref_sha1)"
 
-  WRITE_ALL_FUZZ_TARGETS_AND_ABORT="/tmp/a" "./build_fuzz/bin/fuzz" || true
-  readarray FUZZ_TARGETS < "/tmp/a"
-  for fuzz_target in ${FUZZ_TARGETS[@]}; do
-    if [ -d "../all_inputs/$fuzz_target" ]; then
-      mkdir --parents ../qa-assets/"${FUZZ_CORPORA_DIR}"/$fuzz_target
+    git checkout "$ref"
+    rm -rf build_fuzz/
+    cmake -B build_fuzz \
+      -DCMAKE_C_COMPILER=afl-clang-fast -DCMAKE_CXX_COMPILER=afl-clang-fast++ \
+      -DBUILD_FOR_FUZZING=ON
+    cmake --build build_fuzz -j$(nproc)
+
+    WRITE_ALL_FUZZ_TARGETS_AND_ABORT="/tmp/a" "./build_fuzz/bin/fuzz" || true
+    readarray FUZZ_TARGETS < "/tmp/a"
+    for fuzz_target in ${FUZZ_TARGETS[@]}; do
+      if [ ! -d "../all_inputs/$fuzz_target" ]; then
+        echo "No input corpus for $fuzz_target (ignoring)"
+        continue
+      fi
+      FUZZ_TARGET_DIR="../qa-assets/$FUZZ_CORPORA_DIR/$fuzz_target"
+      mkdir --parents "$FUZZ_TARGET_DIR/$ref_sha1"
       # Allow timeouts and crashes with "-A", "-T all" to use all available cores
-      FUZZ=$fuzz_target afl-cmin -T all -A -i ../all_inputs/$fuzz_target -o ../qa-assets/"${FUZZ_CORPORA_DIR}"/$fuzz_target -- ./build_fuzz/bin/fuzz
-    else
-      echo "No input corpus for $fuzz_target (ignoring)"
-    fi
+      FUZZ=$fuzz_target afl-cmin -T all -A -i "../all_inputs/$fuzz_target" -o "$FUZZ_TARGET_DIR/$ref_sha1" -- ./build_fuzz/bin/fuzz
+      # use cp instead of mv because mv fails if source and destination is same file
+      cp "$FUZZ_TARGET_DIR/$ref_sha1/"* "$FUZZ_TARGET_DIR/"
+      rm -r "$FUZZ_TARGET_DIR/$ref_sha1"
+    done
   done
 
   (
@@ -70,21 +91,25 @@ git clone --depth=1 https://github.com/bitcoin/bitcoin.git
     git commit -m "Reduced inputs for afl-cmin"
   )
 
-  for sanitizer in {"fuzzer","fuzzer,address,undefined,integer"}; do
-    echo "Adding reduced seeds for sanitizer=${sanitizer}"
+  for ref in ${REFS[@]}; do
+    git checkout "$ref"
+    ref_sha1=$(git rev-parse --short $ref)
+    for sanitizer in {"fuzzer","fuzzer,address,undefined,integer"}; do
+      echo "Adding reduced seeds for sanitizer=${sanitizer} on $ref ($ref_sha1)"
 
-    rm -rf build_fuzz/
-    cmake -B build_fuzz \
-      -DCMAKE_C_COMPILER=clang-$LLVM_VERSION -DCMAKE_CXX_COMPILER=clang++-$LLVM_VERSION \
-      -DBUILD_FOR_FUZZING=ON -DSANITIZERS="$sanitizer"
-    cmake --build build_fuzz -j$(nproc)
+      rm -rf build_fuzz/
+      cmake -B build_fuzz \
+        -DCMAKE_C_COMPILER=clang-$LLVM_VERSION -DCMAKE_CXX_COMPILER=clang++-$LLVM_VERSION \
+        -DBUILD_FOR_FUZZING=ON -DSANITIZERS="$sanitizer"
+      cmake --build build_fuzz -j$(nproc)
 
-    ( cd build_fuzz; ./test/fuzz/test_runner.py -l DEBUG --par=$(nproc) --m_dir=../../all_inputs ../../qa-assets/"${FUZZ_CORPORA_DIR}" )
+      ( cd build_fuzz; ./test/fuzz/test_runner.py -l DEBUG --par=$(nproc) --m_dir=../../all_inputs ../../qa-assets/"${FUZZ_CORPORA_DIR}" )
 
-    (
-      cd ../qa-assets
-      git add "${FUZZ_CORPORA_DIR}"
-      git commit -m "Reduced inputs for ${sanitizer}"
-    )
+      (
+        cd ../qa-assets
+        git add "${FUZZ_CORPORA_DIR}"
+        git commit -m "Reduced inputs for ${sanitizer}"
+      )
+    done
   done
 )
