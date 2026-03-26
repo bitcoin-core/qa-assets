@@ -1,3 +1,4 @@
+#!/bin/bash
 # Over time the fuzz engine will reduce inputs (produce a smaller input that
 # yields the same coverage statistics). With a growing set of inputs, it could
 # be useful to occasionally delete the "old" non-reduced inputs.
