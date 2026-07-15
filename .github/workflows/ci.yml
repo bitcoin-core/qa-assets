@@ -68,8 +68,8 @@ jobs:
 
       - name: CI script
         run: |
-          mkdir -p ./ci/scratch/qa-assets
-          mv ./qa-assets/{.git,fuzz_corpora} ./ci/scratch/qa-assets/
+          mkdir -p "./ci/scratch_ ₿🧪_/qa-assets"
+          mv ./qa-assets/{.git,fuzz_corpora} "./ci/scratch_ ₿🧪_/qa-assets/"
           ./ci/test_run_all.sh
 
       - name: Save caches
