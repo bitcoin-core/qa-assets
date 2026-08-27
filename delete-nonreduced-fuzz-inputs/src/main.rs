@@ -36,12 +36,6 @@ const APT_PACKAGES: &[&str] = &[
     "libsqlite3-dev",
     "libevent-dev",
     "libboost-dev",
-    "curl", // Used to get llvm.sh
-    // Used by llvm.sh:
-    "lsb-release",
-    "wget",
-    "software-properties-common",
-    "gnupg",
 ];
 /// Path to the cloned qa-assets repository.
 const QA_ASSETS_PATH: &str = "qa-assets";
@@ -173,29 +167,28 @@ fn install_apt_deps() -> AppResult {
 }
 
 fn install_llvm() -> AppResult {
-    env::set_var("LLVM_VERSION", LLVM_VERSION);
+    let packages = [
+        format!("clang-{LLVM_VERSION}"),
+        format!("llvm-{LLVM_VERSION}"),
+        format!("libc++abi-{LLVM_VERSION}-dev"),
+        format!("libc++-{LLVM_VERSION}-dev"),
+        format!("libclang-{LLVM_VERSION}-dev"),
+        format!("libclang-cpp{LLVM_VERSION}-dev"),
+        format!("libclang-common-{LLVM_VERSION}-dev"),
+        format!("libclang-rt-{LLVM_VERSION}-dev"),
+        format!("llvm-{LLVM_VERSION}-dev"),
+        format!("libunwind-{LLVM_VERSION}-dev"),
+        format!("lld-{LLVM_VERSION}"),
+    ];
 
-    if !Command::new("curl")
-        .args([
-            "--fail",
-            "--location",
-            "--remote-name",
-            "https://apt.llvm.org/llvm.sh",
-        ])
+    if !Command::new("apt")
+        .args(["install", "-y"])
+        .args(&packages)
         .status()
-        .map_err(|e| format!("failed to spawn curl: {e}"))?
+        .map_err(|e| format!("failed to spawn apt: {e}"))?
         .success()
     {
-        Err("curl failed".to_string())?;
-    }
-
-    if !Command::new("bash")
-        .args(["llvm.sh", LLVM_VERSION, "all"])
-        .status()
-        .map_err(|e| format!("failed to spawn bash: {e}"))?
-        .success()
-    {
-        Err("bash llvm.sh failed".to_string())?;
+        Err("apt install LLVM packages failed".to_string())?;
     }
 
     if !Command::new("sh")
