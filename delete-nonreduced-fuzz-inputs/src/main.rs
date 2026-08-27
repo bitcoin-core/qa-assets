@@ -33,6 +33,8 @@ const APT_PACKAGES: &[&str] = &[
     "bsdmainutils",
     "python3",
     "cmake",
+    "libcapnp-dev",
+    "capnproto",
     "libsqlite3-dev",
     "libevent-dev",
     "libboost-dev",
