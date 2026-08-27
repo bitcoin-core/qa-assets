@@ -36,6 +36,8 @@ const APT_PACKAGES: &[&str] = &[
     "libsqlite3-dev",
     "libevent-dev",
     "libboost-dev",
+    "curl", // Used to get llvm.sh
+    // Used by llvm.sh:
     "lsb-release",
     "wget",
     "software-properties-common",
