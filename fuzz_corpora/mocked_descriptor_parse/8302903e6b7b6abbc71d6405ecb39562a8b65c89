@@ -1,1 +1,0 @@
-sh(thresh(3,and_v(a:0,l:0),and_v(a:0,u:0),and_v(a:1,lu:0),a:and_v(a:0,t:0),)

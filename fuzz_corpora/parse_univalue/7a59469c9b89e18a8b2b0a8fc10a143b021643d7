@@ -1,1 +1,0 @@
-"sh(thresh(2,thresh(2,ndv:older(4367385),andv:older(8)),thresh(2,ndv:older(4923607),andvtv:older(7),thresh(2,ndvtv:older(4363186),andv:older(8))))"

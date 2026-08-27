@@ -1,1 +1,0 @@
-wsh(thresh(2,or_i(pk(%36),pk(%35)),or_i(pk(%36),pk(%35))))
