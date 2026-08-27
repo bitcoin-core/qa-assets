@@ -1,0 +1,1 @@
+thresh(1,c:andor(pk(25),pk_h(42),pk_h(24)),pk_h(21),c:andor(pkh(25),pk_h(42),pk_h(24)),pk_h(21),andor(pk(25),pk_h(84),pk_h(24)))s

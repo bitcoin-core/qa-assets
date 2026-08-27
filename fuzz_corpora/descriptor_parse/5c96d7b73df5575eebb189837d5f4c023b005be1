@@ -1,0 +1,1 @@
+wsh(thresh(1,and_b(or_i(0,and_b(0,a:0)),a:and_b(0,a:0)),or_i(0,and_b(0,a:0)),and_b(0,a:0)))
