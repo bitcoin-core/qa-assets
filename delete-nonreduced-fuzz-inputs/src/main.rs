@@ -384,7 +384,7 @@ fn build_bitcoin(git_ref: &str, cmake_args: &[&str]) -> AppResult {
 
     if !Command::new("git")
         .current_dir(BITCOIN_PATH)
-        .args(["checkout", git_ref])
+        .args(["checkout", "FETCH_HEAD"])
         .status()
         .map_err(|e| format!("failed to spawn git checkout: {e}"))?
         .success()
