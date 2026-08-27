@@ -465,8 +465,10 @@ fn run_afl_cmin<P: AsRef<Path>, Q: AsRef<Path>>(
             "-T",
             "all",
             "-A",
-            &format!("-i={}", input_dir.as_ref().display()),
-            &format!("-o={}", output_dir.display()),
+            "-i",
+            &input_dir.as_ref().display().to_string(),
+            "-o",
+            &output_dir.display().to_string(),
             "--",
             &format!("{BITCOIN_PATH}/{BITCOIN_BUILD_DIR}/bin/fuzz"),
         ])
