@@ -1,1 +1,0 @@
-wsh(thresh(1,sha256(%f2),0,sha256(%f2),sha256(%f2),0,sha256(%f2)))

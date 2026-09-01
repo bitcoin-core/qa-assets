@@ -1,1 +1,0 @@
-"wsh(thresh(3,thresh(2,ndv:older(7),andvtv:older(4),tv:older(44)),thresh(2,ndv:older(7),ajndv:older(24)),thresh(1,thresh(2,ndv:older(7),advtv:older(4)),older(7),av:older(4844))))"
