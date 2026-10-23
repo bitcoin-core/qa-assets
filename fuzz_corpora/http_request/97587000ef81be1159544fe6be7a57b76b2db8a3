@@ -1,0 +1,49 @@
+;y. ——————> HTTP/1.0
+¸ÿÿ«©¹:
+
+PUT Ð HTTP/1.0
+«¹:
+
+PUT Ð——> HTTP/1.0
+¸ÿÿ«©¹:
+
+PUT Ð HTTP/1.0
+«:
+
+PUT > HTTP/1.1
+¸ÿÿ«©¹:
+
+PUT Ð HTTP/1.0
+«¹:
+
+PUT Ð——————> HTTP/1.0
+¸ÿÿ«©¹:
+
+PUT Ð HTTP/1.0
+«¹:
+
+PUT Ð——> HTTP/1.0
+¸ÿÿ«©¹:
+
+PUT Ð HTTP/1.0
+«:
+
+PUT > HTTP/1.1
+¸ÿÿ«©¹:
+
+PUT Ð HTTP/1.0
+«¹:
+
+PUT Ð——> HTTP/1.0
+¸ÿÿ«©¹:
+
+PUT Ð HTTP/1.0
+«:
+
+PUT —> HTTP/1.0
+
+PUT Ð HTTP/1.0
+«:
+
+PUT Ð HTTP.0
+*ß ÿ
