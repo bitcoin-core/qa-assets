@@ -66,6 +66,11 @@ jobs:
       - name: Configure Docker
         uses: bitcoin/bitcoin/.github/actions/configure-docker@master
 
+      - name: Set mmap_rnd_bits
+        if: ${{ matrix.name == 'fuzz (msan)' }}
+        # Prevents crashes due to high ASLR entropy
+        run: sudo sysctl -w vm.mmap_rnd_bits=28
+
       - name: CI script
         run: |
           mkdir -p "./ci/scratch_ ₿🧪_/qa-assets"
