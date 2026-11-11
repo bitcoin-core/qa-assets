@@ -36,6 +36,9 @@ script is usually run twice to ensure that the results are "somewhat"
 reproducible (e.g.
 https://github.com/bitcoin-core/qa-assets/pull/119#issuecomment-1518019457).
 
+The script minimizes with every engine we fuzz with (afl++, honggfuzz and
+libFuzzer) and keeps the union, as each engine measures coverage differently.
+
 After pruning the corpora, the coverage should not have dropped at all.
 
 ### Pulling inputs from oss-fuzz
