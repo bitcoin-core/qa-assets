@@ -47,6 +47,9 @@ const FUZZ_CORPORA_DIR: &str = "fuzz_corpora";
 const BITCOIN_PATH: &str = "bitcoin";
 /// Bitcoin build directory.
 const BITCOIN_BUILD_DIR: &str = "build_fuzz";
+/// Per-input timeout of afl-cmin. It is libFuzzer's default, which the libFuzzer merge uses, as a
+/// timed out input is only judged on its partial coverage.
+const MINIMIZER_TIMEOUT_SECS: u64 = 1200;
 
 const LLVM_VERSION: &str = "20";
 const SANITIZERS: &[&str] = &["fuzzer", "fuzzer,address,undefined,integer"];
@@ -465,6 +468,8 @@ fn run_afl_cmin<P: AsRef<Path>, Q: AsRef<Path>>(
             "-T",
             "all",
             "-A",
+            "-t",
+            &(MINIMIZER_TIMEOUT_SECS * 1000).to_string(),
             "-i",
             &input_dir.as_ref().display().to_string(),
             "-o",
